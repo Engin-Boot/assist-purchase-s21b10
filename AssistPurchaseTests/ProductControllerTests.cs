@@ -22,14 +22,15 @@ namespace AssistPurchaseTests
 
 
         [Theory]
-        [InlineData("Features", "Services")]
-        [InlineData("Services" , "DisplaySize")]
-        [InlineData( "DisplaySize", "lastLayer")]
-        [InlineData("WrongResponse", "Invalid RequestResponse Sent")]
-        public void WhenNextQuestionRequestedThenReturnNextLayerIfInputValid(string sentLayer, string expectedReceivedLayer)
+        [InlineData("Features", "Touch_Screen", "Services")]
+        [InlineData("Services" , "ESN", "DisplaySize")]
+        [InlineData( "DisplaySize", "upto 10", "lastLayer")]
+        [InlineData("WrongResponse","wrong member", "Invalid RequestResponse Sent")]
+        public void WhenNextQuestionRequestedThenReturnNextLayerIfInputValid(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
             var sentResponse = new RequestResponse();
             sentResponse.Layer = sentLayer;
+            sentResponse.LayerMembers = new string[] { sentLayerMember };
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
             Assert.Equal(expectedReceivedLayer, actual);
