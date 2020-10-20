@@ -12,11 +12,11 @@ namespace AssistPurchaseCaseStudy.Utility
         public bool IsRequestResponseCorrect(RequestResponse requestResponse)
         {
             var suggestionPathObj = new SuggestionPaths();
-            if(suggestionPathObj.listOfLayers.Contains(requestResponse.Layer))
+            if(suggestionPathObj.ListOfLayers.Contains(requestResponse.Layer))
             {
                 foreach(var layermember in requestResponse.LayerMembers)
                 {
-                    if (!suggestionPathObj.ValidLayerMembers[requestResponse.Layer].Contains(layermember))
+                    if (!suggestionPathObj.validLayerMembers[requestResponse.Layer].Contains(layermember))
                     {
                         return false;
                     }
