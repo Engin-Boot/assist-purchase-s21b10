@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using AssistPurchaseCaseStudy.Utility;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ namespace AssistPurchaseCaseStudy.Controllers
     [ApiController]
     public class AlertController : ControllerBase
     {
-         Repository.IAlertRepository _alertDataBaseRepository;
+       readonly  Repository.IAlertRepository _alertDataBaseRepository;
 
         public AlertController(Repository.IAlertRepository repository)
         {
@@ -43,7 +43,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         public ActionResult Get(string region)
         {
             var customers = this._alertDataBaseRepository.GetRegionSpecificCustomers(region);
-            if (customers.Count() > 0)
+            if (customers.Any())
             {
                 return Ok(customers);
             }
