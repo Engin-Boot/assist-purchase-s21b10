@@ -1,4 +1,4 @@
-﻿using AssistPurchaseCaseStudy.Models;
+using AssistPurchaseCaseStudy.Models;
 using System.Text;
 using Xunit;
 using Newtonsoft.Json;
@@ -38,8 +38,8 @@ namespace AssistPurchaseTests.AutomatedTests
             {
                 ID = "P113",
                 Name = "IntelliVue MNP78",
-                Features = new string[] { "Alarm", "Battery" },
-                Services = new string[] { "Resp", "ESN" },
+                Features = new [] { "Alarm", "Battery" },
+                Services = new [] { "Resp", "ESN" },
                 DisplaySize = "upto 10"
 
 
