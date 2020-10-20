@@ -5,9 +5,9 @@ namespace AssistPurchaseCaseStudy.Repository
     public class RequestResponseHandling : IRequestResponseHandling
     {
 
-        public RequestResponse GetSampleRequestResponse()
+        public RequestResponse GetSampleResponse()
         {
-            Models.RequestResponse sendResponse = new RequestResponse();
+            RequestResponse sendResponse = new RequestResponse();
             return sendResponse;
         }
     }
