@@ -16,7 +16,7 @@ namespace AssistPurchaseCaseStudy.Utility
             {
                 foreach(var layermember in requestResponse.LayerMembers)
                 {
-                    if (!suggestionPathObj.validLayerMembers[requestResponse.Layer].Contains(layermember))
+                    if (!suggestionPathObj.ValidLayerMembers[requestResponse.Layer].Contains(layermember))
                     {
                         return false;
                     }
