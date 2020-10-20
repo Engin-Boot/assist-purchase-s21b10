@@ -105,7 +105,7 @@ namespace AssistPurchaseCaseStudy.Repository
             bool flag = false;
             for (int i = 0; i < productList.Count; i++)
             {
-                if (productList[i].ID == productId)
+                if (productList[i].Id == productId)
                 {
                     productList.Remove(productList[i]);
                     flag = true;
@@ -120,7 +120,7 @@ namespace AssistPurchaseCaseStudy.Repository
             bool flag = false;
             for (int i = 0; i < productList.Count; i++)
             {
-                if (productList[i].ID == productid)
+                if (productList[i].Id == productid)
                 {
                     productList.RemoveAt(i);
                    productList.Insert(i, product);
@@ -132,7 +132,7 @@ namespace AssistPurchaseCaseStudy.Repository
         }
         public bool Check(string productid, Products product)
         {
-            if (product.Equals(null) || product.ID != productid)
+            if (product.Equals(null) || product.Id != productid)
             {
                 return false;
             }
@@ -144,7 +144,7 @@ namespace AssistPurchaseCaseStudy.Repository
             bool flag = false;
             for (int i = 0; i < productList.Count; i++)
             {
-                if (productList[i].ID == productId)
+                if (productList[i].Id == productId)
                 {
 
                     flag = true;
