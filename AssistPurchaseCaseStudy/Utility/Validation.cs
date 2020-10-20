@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using AssistPurchaseCaseStudy.Repository;
 
 
@@ -18,7 +18,7 @@ namespace AssistPurchaseCaseStudy.Utility
             return true;
 
         }
-        public bool CheckContactNoAndName(string contactno, string customername)
+        private bool CheckContactNoAndName(string contactno, string customername)
         {
             if (ContactNocheck(contactno) || String.IsNullOrEmpty(customername))
             {
@@ -26,7 +26,7 @@ namespace AssistPurchaseCaseStudy.Utility
             }
             return true;
         }
-        public bool ContactNocheck(string contactno)
+        private bool ContactNocheck(string contactno)
         {
             if (String.IsNullOrEmpty(contactno) || contactno.Length != 10)
                 return true;
