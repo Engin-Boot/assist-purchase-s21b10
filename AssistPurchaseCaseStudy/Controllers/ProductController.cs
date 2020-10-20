@@ -1,7 +1,4 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AssistPurchaseCaseStudy.Repository;
 using AssistPurchaseCaseStudy.Models;
@@ -16,8 +13,9 @@ namespace AssistPurchaseCaseStudy.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        Repository.IProductRepository _repository;
-        public ProductController(Repository.IProductRepository repository)
+        readonly IProductRepository _repository;
+        readonly IRequestResponseHandling _requestResponseHandling;
+        public ProductController(IProductRepository repository)
         {
             this._repository = repository;
         }
@@ -26,8 +24,8 @@ namespace AssistPurchaseCaseStudy.Controllers
         [HttpPost("questions")]
         public RequestResponse GetNextQuestion([FromBody] RequestResponse recievedResponse)
         {
-            var sendResponse = new RequestResponse(new Dictionary<string, string[]> { }, new string[] { }, "");
-            var requestvalidator = new Utility.RequestResponseValidation();
+            var sendResponse = new RequestResponse();
+            var requestvalidator = new RequestResponseValidation();
             if(requestvalidator.IsRequestResponseCorrect(recievedResponse))
             {
                 var suggestionPathObj = new SuggestionPaths();
@@ -48,7 +46,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         [HttpGet("questions")]
         public RequestResponse GetSampleRequestResponse()
         {
-            var sendResponse = new RequestResponse();
+            var sendResponse = _requestResponseHandling.GetSampleResponse();
             return sendResponse;
         }
 
@@ -56,7 +54,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         [HttpGet("questions/showproducts")]
         public IEnumerable<Products> Get([FromBody] RequestResponse recievedResponse)
         {
-            var requestvalidator = new Utility.RequestResponseValidation();
+            var requestvalidator = new RequestResponseValidation();
             if (requestvalidator.IsGetProductRequestCorrect(recievedResponse))
             {
                 return this._repository.GetAllProductsBasedOnQuestions(recievedResponse.ChoiceDictionary);
