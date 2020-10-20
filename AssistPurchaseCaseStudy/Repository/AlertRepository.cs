@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using AssistPurchaseCaseStudy.Models;
 
 
@@ -7,7 +7,7 @@ namespace AssistPurchaseCaseStudy.Repository
  
         public class AlertRepository : IAlertRepository
         {
-            List<AlertDataModel> _alertsdb = new List<AlertDataModel>();
+           readonly List<AlertDataModel> _alertsdb = new List<AlertDataModel>();
             public AlertRepository()
             {
                 _alertsdb.Add(new AlertDataModel
@@ -36,7 +36,7 @@ namespace AssistPurchaseCaseStudy.Repository
               
                 foreach(AlertDataModel customer in _alertsdb)
                 {
-                if (customer.CustomerRegion == region)
+                    if (customer.CustomerRegion == region)
                     {
                            dataModels.Add(customer);
                     }
