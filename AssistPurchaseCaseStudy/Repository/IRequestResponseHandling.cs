@@ -5,6 +5,6 @@ namespace AssistPurchaseCaseStudy.Repository
 {
     public interface IRequestResponseHandling
     {
-        public RequestResponse GetSampleRequestResponse();
+        public RequestResponse GetSampleResponse();
     }
 }
