@@ -92,7 +92,7 @@ namespace AssistPurchaseCaseStudy.Repository
         public Products GetSpecificProduct(string productId)
         {
             foreach (Products item in productList)
-                if (item.ID == productId)
+                if (item.Id == productId)
                     return item;
 
             return null;
