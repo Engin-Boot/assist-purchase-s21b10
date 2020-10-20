@@ -1,4 +1,4 @@
-﻿using AssistPurchaseCaseStudy.Controllers;
+using AssistPurchaseCaseStudy.Controllers;
 using AssistPurchaseCaseStudy.Repository;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,7 @@ namespace AssistPurchaseTests
 {
     public class AlertControllerTests
     {
-        AlertController _productsController;
+       readonly AlertController _productsController;
         public AlertControllerTests()
         {
             IAlertRepository repository = new AlertRepository();
@@ -34,8 +34,8 @@ namespace AssistPurchaseTests
         public void TestPostWithEmptyInValidData()
         {
 
-            AlertDataModel alertDataModel = new AlertDataModel()
-            { };
+            AlertDataModel alertDataModel = new AlertDataModel();
+            
             var codereceived = _productsController.Post(alertDataModel);
             Assert.IsType<BadRequestObjectResult>(codereceived);
 
