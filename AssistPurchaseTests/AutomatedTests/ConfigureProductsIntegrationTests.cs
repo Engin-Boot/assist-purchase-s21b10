@@ -36,7 +36,7 @@ namespace AssistPurchaseTests.AutomatedTests
         {
             var product = new Products()
             {
-                ID = "P113",
+                Id = "P113",
                 Name = "IntelliVue MNP78",
                 Features = new [] { "Alarm", "Battery" },
                 Services = new [] { "Resp", "ESN" },
@@ -63,7 +63,7 @@ namespace AssistPurchaseTests.AutomatedTests
         {
             var product = new Products()
             {
-                ID = "P102",
+                Id = "P102",
                 Name = "IntelliVue MNP78",
 
             };
