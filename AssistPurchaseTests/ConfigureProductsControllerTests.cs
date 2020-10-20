@@ -73,7 +73,7 @@ namespace AssistPurchaseTests
         {
             Products product = new Products()
             {
-                ID = "P104",
+                Id = "P104",
                 Name = "IntelliVue MX100",
                 DisplaySize="above 15"
                 
@@ -87,7 +87,7 @@ namespace AssistPurchaseTests
         {
             Products product = new Products()
             {
-                ID = "P12090",
+                Id = "P12090",
                 Name = "IntelliVue MP3",
                 DisplaySize = "10"
             };
@@ -100,7 +100,7 @@ namespace AssistPurchaseTests
         {
             Products product = new Products()
             {
-                ID = "P12090",//mismatch ids
+                Id = "P12090",//mismatch ids
                 Name = "IntelliVue MP3",
                 Services=new [] {"Only Spo2"},
                 DisplaySize = "10"
