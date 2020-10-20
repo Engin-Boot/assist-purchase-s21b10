@@ -14,7 +14,7 @@ namespace AssistPurchaseCaseStudy.Controllers
     public class ProductController : ControllerBase
     {
         readonly IProductRepository _repository;
-        readonly IRequestResponseHandling _requestResponseHandling;
+        readonly IRequestResponseHandling _requestResponseHandling = new RequestResponseHandling();
         public ProductController(IProductRepository repository)
         {
             this._repository = repository;
