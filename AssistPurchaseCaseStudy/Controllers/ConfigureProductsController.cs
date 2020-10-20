@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +42,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         [HttpPost("AddProduct")]
         public HttpStatusCode Post([FromBody] Models.Products product)
         {
-            if (String.IsNullOrEmpty(product.ID))
+            if (String.IsNullOrEmpty(product.Id))
             {
                 return HttpStatusCode.BadRequest;
             }
