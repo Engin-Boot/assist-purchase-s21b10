@@ -9,7 +9,7 @@ namespace AssistPurchaseTests
 {
     public class ConfigureProductsControllerTests
     {
-        ConfigureProductsController _productsController;
+       readonly ConfigureProductsController _productsController;
         public ConfigureProductsControllerTests()
 
         {
@@ -38,7 +38,7 @@ namespace AssistPurchaseTests
         [Fact]
         public void TestPostWithEmptyData()
         {
-            Products product = new Products() { };
+            Products product = new Products();
             var codeReceived = _productsController.Post(product);
             Assert.Equal(HttpStatusCode.BadRequest, codeReceived);
         }
@@ -48,7 +48,7 @@ namespace AssistPurchaseTests
             Products product = new Products()
             {
                 Name="IntelliVue MX550",
-                Services=new string[] {"Alarm"}
+                Services=new [] {"Alarm"}
             };
            
             var codeReceived = _productsController.Post(product);
@@ -102,7 +102,7 @@ namespace AssistPurchaseTests
             {
                 ID = "P12090",//mismatch ids
                 Name = "IntelliVue MP3",
-                Services=new string[] {"Only Spo2"},
+                Services=new [] {"Only Spo2"},
                 DisplaySize = "10"
             };
 
