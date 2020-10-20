@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AssistPurchaseCaseStudy.Models;
@@ -8,22 +8,22 @@ namespace AssistPurchaseCaseStudy.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        List<Models.Products> productList = new List<Products>();
+        List<Products> productList = new List<Products>();
 
         public ProductRepository()
         {
-            productList.Add(new Products("P101", "Efficia CM Series", new string[] { "Touch_Screen", "Battery" }, new string[] { "Only Spo2" }, "upto 10"));
-            productList.Add(new Products("P102", "Goldway G40E", new string[] { "Battery" }, new string[] { "ESN", "Resp", "Others" }, "upto 10"));
-            productList.Add(new Products("P103", "IntelliVue AD75", new string[] { "Alarm" }, new string[] { "Additional Display" }, "above 15"));
-            productList.Add(new Products("P104", "IntelliVue MX100", new string[] { "Touch_Screen", "Handle", "Battery" }, new string[] { "ESN", "Resp", "CO2" }, "upto 10"));
-            productList.Add(new Products("P105", "IntelliVue MP5T", new string[] { "Touch_Screen" }, new string[] { "ESN", "Others" }, "upto 10"));
-            productList.Add(new Products("P106", "IntelliVue AD85", new string[] { "Alarm" }, new string[] { "Additional Display" }, "above 15"));
-            productList.Add(new Products("P107", "IntelliVue MX400", new string[] { "Alarm" }, new string[] { "ESN", "Resp", "CO2", "Others" }, "upto 10"));
-            productList.Add(new Products("P108", "IntelliVue X3", new string[] { "Touch_Screen", "Handle", "Battery" }, new string[] { "ESN", "Resp" }, "upto 10"));
-            productList.Add(new Products("P109", "IntelliVue MX750", new string[] { "Touch_Screen", "Alarm" }, new string[] { "ESN", "Resp", "CO2" }, "above 15"));
-            productList.Add(new Products("P110", "IntelliVue MP2", new string[] { "Alarm", "Battery" }, new string[] { "ESN", "Resp" }, "upto 10"));
-            productList.Add(new Products("P111", "IntelliVue MP5", new string[] { "Touch_Screen", "Handle", "Battery" }, new string[] { "ESN" }, "upto 10"));
-            productList.Add(new Products("P112", "IntelliVueMX450", new string[] { "Alarm" }, new string[] { "ESN", "Resp", "CO2" }, "10-15"));
+            productList.Add(new Products("P101", "Efficia CM Series", new[] { "Touch_Screen", "Battery" }, new[] { "Only Spo2" }, "upto 10"));
+            productList.Add(new Products("P102", "Goldway G40E", new[] { "Battery" }, new[] { "ESN", "Resp", "Others" }, "upto 10"));
+            productList.Add(new Products("P103", "IntelliVue AD75", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
+            productList.Add(new Products("P104", "IntelliVue MX100", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp", "CO2" }, "upto 10"));
+            productList.Add(new Products("P105", "IntelliVue MP5T", new[] { "Touch_Screen" }, new[] { "ESN", "Others" }, "upto 10"));
+            productList.Add(new Products("P106", "IntelliVue AD85", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
+            productList.Add(new Products("P107", "IntelliVue MX400", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2", "Others" }, "upto 10"));
+            productList.Add(new Products("P108", "IntelliVue X3", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
+            productList.Add(new Products("P109", "IntelliVue MX750", new[] { "Touch_Screen", "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "above 15"));
+            productList.Add(new Products("P110", "IntelliVue MP2", new[] { "Alarm", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
+            productList.Add(new Products("P111", "IntelliVue MP5", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN" }, "upto 10"));
+            productList.Add(new Products("P112", "IntelliVueMX450", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "10-15"));
 
         }
 
@@ -40,7 +40,7 @@ namespace AssistPurchaseCaseStudy.Repository
 
         public IEnumerable<Products> GetAllProductsBasedOnQuestions(Dictionary<string, string[]> choiceDictionary)
         {
-            List<Models.Products> productBasedOnQuestionList = new List<Products>();
+            List<Products> productBasedOnQuestionList = new List<Products>();
             foreach (var product in productList)
             {
                 if (IsProductSatisfy(product, choiceDictionary))
@@ -52,7 +52,7 @@ namespace AssistPurchaseCaseStudy.Repository
             return productBasedOnQuestionList;
         }
 
-        public bool IsProductSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
+        private bool IsProductSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
         {
             if (IsFeatureSatisfy(product, choiceDictionary))
             {
@@ -61,7 +61,7 @@ namespace AssistPurchaseCaseStudy.Repository
             return false;
         }
 
-        public bool IsFeatureSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
+        private bool IsFeatureSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
         {
 
             if (product.Features.Intersect(choiceDictionary["Features"]).Count() != 0 && IsServicesSatisfy(product, choiceDictionary))
@@ -71,7 +71,7 @@ namespace AssistPurchaseCaseStudy.Repository
             return false;
         }
 
-        public bool IsServicesSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
+        private bool IsServicesSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
         {
             if (product.Services.Intersect(choiceDictionary["Services"]).Count() != 0 && IsSizeSatisfy(product, choiceDictionary))
             {
@@ -80,7 +80,7 @@ namespace AssistPurchaseCaseStudy.Repository
             return false;
 
         }
-        public bool IsSizeSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
+        private bool IsSizeSatisfy(Products product, Dictionary<string, string[]> choiceDictionary)
         {
             if ((choiceDictionary["DisplaySize"]).Contains(product.DisplaySize))
             {
