@@ -8,7 +8,7 @@ namespace AssistPurchaseCaseStudy.Utility
     {
         public bool CheckValidity(Models.AlertDataModel dataModel)
         {
-            Repository.ProductRepository repository = new ProductRepository();
+            ProductRepository repository = new ProductRepository();
             bool productIdResponse = repository.CheckProductId(dataModel.ProductIdConfirmed);
             bool detailsresponse = CheckContactNoAndName(dataModel.CustomerContactNo, dataModel.CustomerName);
             if (productIdResponse == false || detailsresponse == false)

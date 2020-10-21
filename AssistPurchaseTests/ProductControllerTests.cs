@@ -27,7 +27,7 @@ namespace AssistPurchaseTests
         {
             var sentResponse = new RequestResponse();
             sentResponse.Layer = sentLayer;
-            sentResponse.LayerMembers = new string[] { sentLayerMember };
+            sentResponse.LayerMembers = new [] { sentLayerMember };
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
             Assert.Equal(expectedReceivedLayer, actual);
@@ -42,7 +42,7 @@ namespace AssistPurchaseTests
         {
             var sentResponse = new RequestResponse();
             sentResponse.Layer = sentLayer;
-            sentResponse.LayerMembers = new string[]{ sentLayerMember};
+            sentResponse.LayerMembers = new []{ sentLayerMember};
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
             Assert.Equal(expectedReceivedLayer, actual);
