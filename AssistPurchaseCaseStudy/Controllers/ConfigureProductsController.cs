@@ -9,7 +9,7 @@ namespace AssistPurchaseCaseStudy.Controllers
     [ApiController]
     public class ConfigureProductsController : ControllerBase
     {
-        Repository.IProductRepository _productDataBaseRepository;
+      readonly  Repository.IProductRepository _productDataBaseRepository;
 
         public ConfigureProductsController(Repository.IProductRepository repository)
         {
