@@ -79,6 +79,9 @@
     <Compile Include="CustomerDetailsForm.xaml.cs">
       <DependentUpon>CustomerDetailsForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomersInRegion.xaml.cs">
+      <DependentUpon>CustomersInRegion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\AlertDataModel.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\RequestResponse.cs" />
@@ -91,6 +94,9 @@
     <Compile Include="QuestionBlock.xaml.cs">
       <DependentUpon>QuestionBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SalesWindow.xaml.cs">
+      <DependentUpon>SalesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utility\AddAProduct.cs" />
     <Compile Include="Utility\Add_Product.cs" />
     <Compile Include="Utility\GetAllProducts.cs" />
@@ -98,6 +104,7 @@
     <Compile Include="Utility\GetProductList.cs" />
     <Compile Include="Utility\GetQuestions.cs" />
     <Compile Include="Utility\RemoveAProduct.cs" />
+    <Compile Include="Utility\SalesOperations.cs" />
     <Compile Include="Utility\UpdateProduct.cs" />
     <Compile Include="Utility\ViewParticularProduct.cs" />
     <Compile Include="AddProductForm.xaml.cs">
@@ -112,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomerServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomersInRegion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QuestionBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

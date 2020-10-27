@@ -23,5 +23,22 @@ namespace AssistPurchaseFrontend
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConsumersInEachRegion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

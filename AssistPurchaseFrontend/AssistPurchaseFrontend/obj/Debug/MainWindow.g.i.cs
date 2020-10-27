@@ -89,7 +89,7 @@ namespace AssistPurchaseFrontend {
             case 3:
             
             #line 24 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Exit_Button_Click);
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Sales_Button_Click);
             
             #line default
             #line hidden

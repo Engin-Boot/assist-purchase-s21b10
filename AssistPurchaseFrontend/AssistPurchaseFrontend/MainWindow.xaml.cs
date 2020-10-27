@@ -39,6 +39,13 @@ namespace AssistPurchaseFrontend
             this.Close();
         }
 
+        private void Sales_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SalesWindow window = new SalesWindow();
+            window.Show();
+            this.Close();
+        }
+
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in App.Current.Windows)

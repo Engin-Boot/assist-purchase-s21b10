@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssistPurchaseFrontend"
         mc:Ignorable="d"
-        Title="SalesWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="SalesWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#0474ac">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="./Icons/PhilipsIcon.png" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"></Image>
+        <TextBlock Grid.Row="0" Text="ASSIST PURCHASE&#xA; APPLICATION" TextAlignment="Center" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Consumers in Each Region" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ConsumersInEachRegion_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Grid.Column="1" Content="New Orders" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="Button_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Grid.Column="2" Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="Back_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+        </Grid>
     </Grid>
 </Window>
