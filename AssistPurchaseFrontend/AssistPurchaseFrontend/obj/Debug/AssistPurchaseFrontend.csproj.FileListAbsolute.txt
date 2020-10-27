@@ -27,6 +27,5 @@ C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseF
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\AssistPurchaseFrontend.csproj.CopyComplete
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\AssistPurchaseFrontend.exe
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\AssistPurchaseFrontend.pdb
-C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\AssistPurchaseFrontend.csprojAssemblyReference.cache
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\ProductViewWindow.g.cs
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\AssistPurchaseFrontend\obj\Debug\ProductViewWindow.baml
