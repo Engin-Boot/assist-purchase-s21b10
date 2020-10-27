@@ -4,6 +4,7 @@ using AssistPurchaseCaseStudy.Controllers;
 using AssistPurchaseCaseStudy.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Collections.Generic;
 
 namespace AssistPurchaseTests
 {
@@ -76,8 +77,7 @@ namespace AssistPurchaseTests
                 Id = "P104",
                 Name = "IntelliVue MX100",
                 DisplaySize = "above 15",
-                OtherInfo = new System.Collections.Generic.List<string>() { }
-                
+                OtherInfo = new List<string>() { "The MX100 is a flexible, reliable way to monitor patients on the move" }
             };
 
             var codeReceived = _productsController.Put("P104", product);

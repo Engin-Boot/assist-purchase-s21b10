@@ -34,10 +34,6 @@ namespace AssistPurchaseCaseStudy.Controllers
                 {
                     sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer });
                 }
-                else if (recievedResponse.Layer == "lastLayer")
-                {
-                    return recievedResponse;
-                }
                 else
                 {
                     sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);

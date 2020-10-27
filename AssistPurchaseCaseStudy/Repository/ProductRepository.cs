@@ -8,40 +8,40 @@ namespace AssistPurchaseCaseStudy.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly List<Products> productList = new List<Products>();
+        private readonly List<Products> _productList = new List<Products>();
 
         public ProductRepository()
         {
-            productList.Add(new Products("P101", "Efficia CM Series", new[] { "Touch_Screen", "Battery" }, new[] { "Only Spo2" }, "upto 10"));
-            productList.Add(new Products("P102", "Goldway G40E", new[] { "Battery" }, new[] { "ESN", "Resp", "Others" }, "upto 10"));
-            productList.Add(new Products("P103", "IntelliVue AD75", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
-            productList.Add(new Products("P104", "IntelliVue MX100", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp", "CO2" }, "upto 10"));
-            productList.Add(new Products("P105", "IntelliVue MP5T", new[] { "Touch_Screen" }, new[] { "ESN", "Others" }, "upto 10"));
-            productList.Add(new Products("P106", "IntelliVue AD85", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
-            productList.Add(new Products("P107", "IntelliVue MX400", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2", "Others" }, "upto 10"));
-            productList.Add(new Products("P108", "IntelliVue X3", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
-            productList.Add(new Products("P109", "IntelliVue MX750", new[] { "Touch_Screen", "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "above 15"));
-            productList.Add(new Products("P110", "IntelliVue MP2", new[] { "Alarm", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
-            productList.Add(new Products("P111", "IntelliVue MP5", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN" }, "upto 10"));
-            productList.Add(new Products("P112", "IntelliVueMX450", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "10-15"));
+            _productList.Add(new Products("P101", "Efficia CM Series", new[] { "Touch_Screen", "Battery" }, new[] { "Only Spo2" }, "upto 10"));
+            _productList.Add(new Products("P102", "Goldway G40E", new[] { "Battery" }, new[] { "ESN", "Resp", "Others" }, "upto 10"));
+            _productList.Add(new Products("P103", "IntelliVue AD75", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
+            _productList.Add(new Products("P104", "IntelliVue MX100", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp", "CO2" }, "upto 10"));
+            _productList.Add(new Products("P105", "IntelliVue MP5T", new[] { "Touch_Screen" }, new[] { "ESN", "Others" }, "upto 10"));
+            _productList.Add(new Products("P106", "IntelliVue AD85", new[] { "Alarm" }, new[] { "Additional Display" }, "above 15"));
+            _productList.Add(new Products("P107", "IntelliVue MX400", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2", "Others" }, "upto 10"));
+            _productList.Add(new Products("P108", "IntelliVue X3", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
+            _productList.Add(new Products("P109", "IntelliVue MX750", new[] { "Touch_Screen", "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "above 15"));
+            _productList.Add(new Products("P110", "IntelliVue MP2", new[] { "Alarm", "Battery" }, new[] { "ESN", "Resp" }, "upto 10"));
+            _productList.Add(new Products("P111", "IntelliVue MP5", new[] { "Touch_Screen", "Handle", "Battery" }, new[] { "ESN" }, "upto 10"));
+            _productList.Add(new Products("P112", "IntelliVueMX450", new[] { "Alarm" }, new[] { "ESN", "Resp", "CO2" }, "10-15"));
 
         }
 
         public void AddNewProduct(Products newProduct)
         {
 
-            productList.Add(newProduct);
+            _productList.Add(newProduct);
         }
 
         public IEnumerable<Products> GetAllProducts()
         {
-            return productList;
+            return _productList;
         }
 
         public IEnumerable<Products> GetAllProductsBasedOnQuestions(Dictionary<string, string[]> choiceDictionary)
         {
             List<Products> productBasedOnQuestionList = new List<Products>();
-            foreach (var product in productList)
+            foreach (var product in _productList)
             {
                 if (IsProductSatisfy(product, choiceDictionary))
                 {
@@ -91,7 +91,7 @@ namespace AssistPurchaseCaseStudy.Repository
 
         public Products GetSpecificProduct(string productId)
         {
-            foreach (Products item in productList)
+            foreach (Products item in _productList)
                 if (item.Id == productId)
                     return item;
 
@@ -103,11 +103,11 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool RemoveProduct(string productId)
         {
             bool flag = false;
-            for (int i = 0; i < productList.Count; i++)
+            for (int i = 0; i < _productList.Count; i++)
             {
-                if (productList[i].Id == productId)
+                if (_productList[i].Id == productId)
                 {
-                    productList.Remove(productList[i]);
+                    _productList.Remove(_productList[i]);
                     flag = true;
                     break;
                 }
@@ -118,12 +118,12 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool UpdateProduct(string productid, Products product)
         {
             bool flag = false;
-            for (int i = 0; i < productList.Count; i++)
+            for (int i = 0; i < _productList.Count; i++)
             {
-                if (productList[i].Id == productid)
+                if (_productList[i].Id == productid)
                 {
-                    productList.RemoveAt(i);
-                   productList.Insert(i, product);
+                    _productList.RemoveAt(i);
+                   _productList.Insert(i, product);
                     flag = true;
                     break;
                 }
@@ -142,7 +142,7 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool CheckProductId(string productId)
         {
             bool flag = false;
-            foreach(Products product in productList) 
+            foreach(Products product in _productList) 
             { 
                 if (product.Id == productId)
                 {
