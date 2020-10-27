@@ -34,21 +34,7 @@ namespace AssistPurchaseFrontend
         {
             if (count == 4)
             {
-                if (GetQuestions.choicesMade == "Yes,")
-                {
-                    GetProductList productList = new GetProductList();
-                    await productList.getProductsMatchingTheChoices();
-                    QuestionBlock display = productList.getQuestion();
-                    panelForQuestion.Children.Add(display);
-                    count = count + 1;
-                }
-                else
-                {
-                    GetQuestions getQuestions = new GetQuestions();
-                    getQuestions.setPreviousQuestion();
-                    panelForQuestion.Children.RemoveAt(count);
-                    count = count - 1;
-                }
+                QuestionAccordingToChoices();
             }
             else if (count > 4) 
             {
@@ -62,6 +48,25 @@ namespace AssistPurchaseFrontend
                 QuestionBlock block = await getQuestions.Question();
                 panelForQuestion.Children.Add(block);
                 count = count + 1;
+            }
+        }
+
+        public async void QuestionAccordingToChoices()
+        {
+            if (GetQuestions.choicesMade == "Yes,")
+            {
+                GetProductList productList = new GetProductList();
+                await productList.getProductsMatchingTheChoices();
+                QuestionBlock display = productList.getQuestion();
+                panelForQuestion.Children.Add(display);
+                count = count + 1;
+            }
+            else
+            {
+                GetQuestions getQuestions = new GetQuestions();
+                getQuestions.setPreviousQuestion();
+                panelForQuestion.Children.RemoveAt(count);
+                count = count - 1;
             }
         }
 

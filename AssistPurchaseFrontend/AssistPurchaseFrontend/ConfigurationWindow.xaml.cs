@@ -34,18 +34,8 @@ namespace AssistPurchaseFrontend
             int noOfProducts = productList.Count();
             double rowsingrid = noOfProducts / 4.0;
             int rows =((int)Math.Ceiling(rowsingrid));
-            for (int i = 0; i < rows; i++)
-            {
-                RowDefinition gridRow = new RowDefinition();
-                ProductImageGrid.RowDefinitions.Add(gridRow);
-                ProductImageGrid.ShowGridLines=true;
-            }
-            for(int i = 0; i < 4; i++)
-            {
-                ColumnDefinition gridColumn = new ColumnDefinition();
-                ProductImageGrid.ColumnDefinitions.Add(gridColumn);
-                ProductImageGrid.ShowGridLines = true;
-            }
+            AddRowsInGrid(rows);
+            AddColumnsInGrid();
             for(int i = 0; i < noOfProducts; i++)
             {
                 int rowno = i / 4;
@@ -63,6 +53,25 @@ namespace AssistPurchaseFrontend
                 Grid.SetRow(dashboard, rowno);
                 Grid.SetColumn(dashboard, columnno);
                 ProductImageGrid.Children.Add(dashboard);
+            }
+        }
+
+        public void AddRowsInGrid(int rows)
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                RowDefinition gridRow = new RowDefinition();
+                ProductImageGrid.RowDefinitions.Add(gridRow);
+                ProductImageGrid.ShowGridLines = true;
+            }
+        }
+        public void AddColumnsInGrid()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                ColumnDefinition gridColumn = new ColumnDefinition();
+                ProductImageGrid.ColumnDefinitions.Add(gridColumn);
+                ProductImageGrid.ShowGridLines = true;
             }
         }
 
