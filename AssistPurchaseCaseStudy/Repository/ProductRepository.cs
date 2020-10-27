@@ -8,7 +8,7 @@ namespace AssistPurchaseCaseStudy.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        List<Products> productList = new List<Products>();
+        private readonly List<Products> productList = new List<Products>();
 
         public ProductRepository()
         {
@@ -142,9 +142,9 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool CheckProductId(string productId)
         {
             bool flag = false;
-            for (int i = 0; i < productList.Count; i++)
-            {
-                if (productList[i].Id == productId)
+            foreach(Products product in productList) 
+            { 
+                if (product.Id == productId)
                 {
 
                     flag = true;

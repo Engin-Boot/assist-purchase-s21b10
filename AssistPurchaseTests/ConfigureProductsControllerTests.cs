@@ -75,7 +75,8 @@ namespace AssistPurchaseTests
             {
                 Id = "P104",
                 Name = "IntelliVue MX100",
-                DisplaySize="above 15"
+                DisplaySize = "above 15",
+                OtherInfo = new System.Collections.Generic.List<string>() { }
                 
             };
 

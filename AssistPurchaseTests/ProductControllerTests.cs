@@ -2,14 +2,13 @@
 using AssistPurchaseCaseStudy.Controllers;
 using AssistPurchaseCaseStudy.Models;
 using AssistPurchaseCaseStudy.Repository;
-
-
+using System.Collections.Generic;
 
 namespace AssistPurchaseTests
 {
     public class ProductControllerTests
     {
-        ProductController _productsController;
+        private readonly ProductController _productsController;
         public ProductControllerTests()
         {
             IProductRepository repository = new ProductRepository();
@@ -23,10 +22,13 @@ namespace AssistPurchaseTests
         [InlineData("WrongResponse","wrong member", "Invalid RequestResponse Sent")]
         public void WhenNextQuestionRequestedThenReturnNextLayerIfInputValid(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
-            var sentResponse = new RequestResponse();
-            sentResponse.Layer = sentLayer;
-            sentResponse.LayerMembers = new [] { sentLayerMember };
-            sentResponse.ChoiceDictionary.Add(sentResponse.Layer, sentResponse.LayerMembers);
+            Dictionary<string, string[]> dict = new Dictionary<string, string[]>() { { sentLayer, new string[] { sentLayerMember } } };
+            var sentResponse = new RequestResponse()
+            {
+                Layer = sentLayer,
+                LayerMembers = new[] { sentLayerMember },
+                ChoiceDictionary = dict
+            };
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
             Assert.Equal(expectedReceivedLayer, actual);
@@ -39,10 +41,13 @@ namespace AssistPurchaseTests
         [InlineData("DisplaySize", "upto 10", "lastLayer")]
         public void WhenInvalidResponseThenReturnMessageInLayer(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
-            var responseSent = new RequestResponse();
-            responseSent.Layer = sentLayer;
-            responseSent.LayerMembers = new []{ sentLayerMember};
-            responseSent.ChoiceDictionary.Add(responseSent.Layer, responseSent.LayerMembers);
+            Dictionary<string, string[]> dictionary = new Dictionary<string, string[]>() { { sentLayer, new string[] { sentLayerMember } } };
+            var responseSent = new RequestResponse()
+            {
+                Layer = sentLayer,
+                LayerMembers = new[] { sentLayerMember },
+                ChoiceDictionary = dictionary
+            };
             var receivedResponse = _productsController.GetNextQuestion(responseSent);
             var actualLayer = receivedResponse.Layer;
             Assert.Equal(expectedReceivedLayer, actualLayer);
