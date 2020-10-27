@@ -39,13 +39,13 @@ namespace AssistPurchaseTests
         [InlineData("DisplaySize", "upto 10", "lastLayer")]
         public void WhenInvalidResponseThenReturnMessageInLayer(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
-            var sentResponse = new RequestResponse();
-            sentResponse.Layer = sentLayer;
-            sentResponse.LayerMembers = new []{ sentLayerMember};
-            sentResponse.ChoiceDictionary.Add(sentResponse.Layer, sentResponse.LayerMembers);
-            var receivedResponse = _productsController.GetNextQuestion(sentResponse);
-            var actual = receivedResponse.Layer;
-            Assert.Equal(expectedReceivedLayer, actual);
+            var responseSent = new RequestResponse();
+            responseSent.Layer = sentLayer;
+            responseSent.LayerMembers = new []{ sentLayerMember};
+            responseSent.ChoiceDictionary.Add(responseSent.Layer, responseSent.LayerMembers);
+            var receivedResponse = _productsController.GetNextQuestion(responseSent);
+            var actualLayer = receivedResponse.Layer;
+            Assert.Equal(expectedReceivedLayer, actualLayer);
         }
 
     }
