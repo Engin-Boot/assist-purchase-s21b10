@@ -12,6 +12,6 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" x:Name="ImageGrid" Background="Transparent"></Grid>
-        <ToggleButton Content="ProductId" x:Name="ProductId" Foreground="DarkBlue" Background="White" Grid.Row="1" Style="{StaticResource ResourceKey=ToggleButtonStyle}"></ToggleButton>
+        <ToggleButton Content="ProductId" x:Name="ProductId" Grid.Row="1" Style="{StaticResource ResourceKey=ToggleButtonStyle}"></ToggleButton>
     </Grid>
 </UserControl>

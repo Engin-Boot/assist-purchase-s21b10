@@ -43,9 +43,7 @@ namespace AssistPurchaseCaseStudy.Controllers
                 {
                     sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
                 }
-                //recievedResponse.ChoiceDictionary.Add(recievedResponse.Layer, recievedResponse.LayerMembers);
                 sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
-                //sendResponse.ChoiceDictionary.Add(recievedResponse.Layer, recievedResponse.LayerMembers);
             }
             else
             {

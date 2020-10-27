@@ -82,6 +82,7 @@
     <Compile Include="Utility\GetProductList.cs" />
     <Compile Include="Utility\GetQuestions.cs" />
     <Compile Include="Utility\RemoveAProduct.cs" />
+    <Compile Include="Utility\UpdateProduct.cs" />
     <Compile Include="Utility\ViewParticularProduct.cs" />
     <Page Include="ConfigurationWindow.xaml">
       <SubType>Designer</SubType>

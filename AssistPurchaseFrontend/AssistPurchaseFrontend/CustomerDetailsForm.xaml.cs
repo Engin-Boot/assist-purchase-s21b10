@@ -25,7 +25,11 @@ namespace AssistPurchaseFrontend
         {
             InitializeComponent();
             Products product = GetProductList.productSelected;
-            ProductDescription.Text = product.Id + Environment.NewLine + product.Name + Environment.NewLine + string.Join(",", product.Features) + Environment.NewLine + string.Join(",", product.Services) + Environment.NewLine + string.Join(",", product.DisplaySize);
+            ProductDescription.Text ="Product Id:- " + product.Id + Environment.NewLine + 
+                                     "Product Name:- "+ product.Name + Environment.NewLine + 
+                                     "Features:- "+ string.Join(",", product.Features) + Environment.NewLine + 
+                                     "Services:- "+ string.Join(",", product.Services) + Environment.NewLine + 
+                                     "Display Size:- "+string.Join(",", product.DisplaySize);
             Image Mole = new Image();
             string imgPath = @".\Images\" + product.Name + ".PNG";
             ImageSource MoleImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
@@ -50,13 +54,8 @@ namespace AssistPurchaseFrontend
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in App.Current.Windows)
-            {
-                if (!window.IsActive)
-                {
-                    window.Show();
-                }
-            }
+            CustomerServices window = new CustomerServices();
+            window.Show();
             this.Close();
         }
 

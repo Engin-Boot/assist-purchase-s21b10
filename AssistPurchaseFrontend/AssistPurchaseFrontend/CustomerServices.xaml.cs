@@ -40,7 +40,7 @@ namespace AssistPurchaseFrontend
             {
                 CustomerDetailsForm form = new CustomerDetailsForm();
                 form.Show();
-                this.Visibility = Visibility.Collapsed;
+                this.Close();
             }
             else
             {

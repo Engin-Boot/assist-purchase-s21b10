@@ -17,7 +17,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" x:Name="ImageGrid"/>
-            <TextBlock x:Name="ProductDescription" Text="ProductDescription" Grid.Row="1" Foreground="White"/>
+            <TextBlock x:Name="ProductDescription" Text="ProductDescription" Grid.Row="1" Style="{StaticResource ResourceKey=DescriptionStyle}"/>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -39,7 +39,12 @@
             <TextBlock Grid.Row="4" Grid.Column="0" Text="Selected Product Id" Style="{StaticResource ResourceKey=TextBlockStyle}" />
             <TextBox x:Name="CustName" Grid.Row="0" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
             <TextBox x:Name="CustNo" Grid.Row="1" Grid.Column="1" Style="{StaticResource ResourceKey=TextBoxStyle}" />
-            <TextBox x:Name="CustRegion" Grid.Row="2" Grid.Column="1" Style="{StaticResource ResourceKey=TextBoxStyle}" />
+            <ComboBox x:Name="CustRegion" Grid.Row="2" Grid.Column="1" Width="300" Height="40" FontSize="30" Foreground="DarkBlue">
+                <ComboBoxItem Content="North" FontSize="30" Foreground="DarkBlue"></ComboBoxItem>
+                <ComboBoxItem Content="South" FontSize="30" Foreground="DarkBlue"></ComboBoxItem>
+                <ComboBoxItem Content="East" FontSize="30" Foreground="DarkBlue"></ComboBoxItem>
+                <ComboBoxItem Content="West" FontSize="30" Foreground="DarkBlue"></ComboBoxItem>
+            </ComboBox>
             <TextBox x:Name="CustEmail" Grid.Row="3" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="ProductId" IsEnabled="False" Style="{StaticResource ResourceKey=TextBoxStyle}"/>
             <Button Content="Back" Grid.Row="5" Grid.Column="0" Click="Back_Button_Click" Style="{StaticResource ResourceKey=ButtonStyle}"/>

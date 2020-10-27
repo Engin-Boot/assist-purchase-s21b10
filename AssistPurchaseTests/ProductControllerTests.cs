@@ -23,12 +23,13 @@ namespace AssistPurchaseTests
         [InlineData("WrongResponse","wrong member", "Invalid RequestResponse Sent")]
         public void WhenNextQuestionRequestedThenReturnNextLayerIfInputValid(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
-            /*var sentResponse = new RequestResponse();
+            var sentResponse = new RequestResponse();
             sentResponse.Layer = sentLayer;
             sentResponse.LayerMembers = new [] { sentLayerMember };
+            sentResponse.ChoiceDictionary.Add(sentResponse.Layer, sentResponse.LayerMembers);
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
-            Assert.Equal(expectedReceivedLayer, actual);*/
+            Assert.Equal(expectedReceivedLayer, actual);
         }
 
         [Theory]
@@ -38,12 +39,13 @@ namespace AssistPurchaseTests
         [InlineData("DisplaySize", "upto 10", "lastLayer")]
         public void WhenInvalidResponseThenReturnMessageInLayer(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
         {
-            /*var sentResponse = new RequestResponse();
+            var sentResponse = new RequestResponse();
             sentResponse.Layer = sentLayer;
             sentResponse.LayerMembers = new []{ sentLayerMember};
+            sentResponse.ChoiceDictionary.Add(sentResponse.Layer, sentResponse.LayerMembers);
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
-            Assert.Equal(expectedReceivedLayer, actual);*/
+            Assert.Equal(expectedReceivedLayer, actual);
         }
 
     }

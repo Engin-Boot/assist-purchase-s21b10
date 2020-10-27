@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssistPurchaseFrontend"
         mc:Ignorable="d"
-        Title="ProductViewWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock x:Name="ProductId"/>
+        Title="ProductViewWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#0474ac">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="ProductImage" Grid.Row="0" Grid.Column="0"></Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="ProductId"  Grid.Row="0" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" IsEnabled="False" />
+                <TextBox x:Name="ProductName"  Grid.Row="1" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="Features"  Grid.Row="2" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="Services" Grid.Row="3" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="DisplaySize" Grid.Row="4" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBlock Text="PRODUCT ID"  Grid.Row="0"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
+                <TextBlock Text="PRODUCT NAME" Grid.Row="1"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
+                <TextBlock Text="FEATURES" Grid.Row="2"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
+                <TextBlock Text="SERVICES" Grid.Row="3"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
+                <TextBlock Text="DISPLAY SIZE" Grid.Row="4"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
+            </Grid>
+        </Grid>
+        <Button Grid.Row="1" x:Name="Update" Content="Update" Style="{StaticResource ResourceKey=ButtonStyle}" Click="Update_Click" Margin="470,15,122,15"/>
+        <Button Grid.Row="1" x:Name="Back" Content="Back" Style="{StaticResource ResourceKey=ButtonStyle}" Click="Back_Click" Margin="91,15,501,15"/>
     </Grid>
+    
 </Window>

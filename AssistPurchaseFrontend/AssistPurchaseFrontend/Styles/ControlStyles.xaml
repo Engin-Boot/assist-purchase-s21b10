@@ -36,6 +36,15 @@
         <Setter Property="Background" Value="White"/>
         <Setter Property="Foreground" Value="DarkBlue"/>
     </Style>
+    <Style x:Key="DescriptionStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="200"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Justify"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="DarkBlue"/>
+    </Style>
     <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="BorderBrush" Value="Gray"/>
         <Setter Property="BorderThickness" Value="1"/>
