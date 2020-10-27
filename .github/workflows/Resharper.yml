@@ -18,7 +18,6 @@ jobs:
       
       - name: Install resharper
         run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
-	 
       - name: Add xunit Package
         run: dotnet add AssistPurchaseTests/AssistPurchaseTests.csproj package xunit --version 2.4.0
         
