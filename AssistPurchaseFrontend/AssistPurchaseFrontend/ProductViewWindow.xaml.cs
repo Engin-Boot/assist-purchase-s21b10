@@ -2,6 +2,7 @@
 using AssistPurchaseFrontend.Utility;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace AssistPurchaseFrontend
 {
@@ -26,11 +28,17 @@ namespace AssistPurchaseFrontend
         {
             InitializeComponent();
             this.selectedProduct = product;
+            
             Image Mole = new Image();
             string imgPath = @".\Images\" + product.Name + ".PNG";
+            //if (File.Exists(Path.GetFullPath(imgPath)) ==false)
+            //{
+            //    imgPath = @".\Images\Demo Product.PNG";
+            //}
             ImageSource MoleImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
             Mole.Source = MoleImage;
             ProductImage.Children.Add(Mole);
+            
             ProductId.Text = product.Id;
             ProductName.Text = product.Name;
             Features.Text = string.Join(",", product.Features);

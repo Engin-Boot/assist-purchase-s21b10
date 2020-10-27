@@ -2,6 +2,7 @@
 using AssistPurchaseFrontend.Utility;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,6 +46,10 @@ namespace AssistPurchaseFrontend
                 dashboard.ProductId.Checked += ProductId_Checked;
                 Image Mole = new Image();
                 string imgPath = @".\Images\" + productList[i].Name + ".PNG";
+                //if (!File.Exists(imgPath))
+                //{
+                //    imgPath=@".\Images\Demo Product.PNG";
+                //}
                 ImageSource MoleImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
                 Mole.Source = MoleImage;
                 Mole.Width = 200;
@@ -80,25 +85,17 @@ namespace AssistPurchaseFrontend
             productIdSelected = ((ToggleButton)sender).Content.ToString();
         }
 
-        private async void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddAProduct product = new AddAProduct();
-            Products productToBeAdded = new Products()
-            {
-                Id = "P113",
-                Name = "Demo Product",
-                Features = new string[] { "Touch_Screen", "Alarm" },
-                Services = new string[] { "ESN" },
-                DisplaySize = "upto 10",
-                OtherInfo = null
-            };
-            await product.addAProduct(productToBeAdded);
+            AddProductForm newWindow = new AddProductForm();
+            newWindow.Show();
         }
 
         private async void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             RemoveAProduct product = new RemoveAProduct();
             await product.removeAProductByID(productIdSelected);
+            this.RefreshButton_Click(sender, e);
         }
 
         private async void ViewButton_Click(object sender, RoutedEventArgs e)

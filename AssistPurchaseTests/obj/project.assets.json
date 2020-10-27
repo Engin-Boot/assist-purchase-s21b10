@@ -828,7 +828,7 @@
       ]
     },
     "Microsoft.AspNetCore.Hosting/2.2.7": {
-      "sha512": "2ZORFIfzcoSgm34z7ddMaVJFpIN7JJubPV+pRwAa7/NT33KEqLYEJWchDxQpwLvzKOnl//V3ElDcNJcD4blUDQ==",
+      "sha512": "O0ZBE53Fa9bVGXykDzvgMFW0Pe1QyPPFg1pazN8l3RUFSWBsDJ9/iD1LHXgADA8+ZD3R/1zkvraPa9SZdievxQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.hosting/2.2.7",
       "files": [
@@ -1022,7 +1022,7 @@
       ]
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/2.2.4": {
-      "sha512": "TEhBhGP1CWuHs1+Rk09AlGK02VMTSMZtrKzZgW8/N08+21W1ArB1iZZt1kUnCfIwfuYHgHFGyni0ApcOJ2pN/Q==",
+      "sha512": "Os7uRhp9xwawY5w2tgXw/86YrmAJZl6aHiQVdS9boWybTWPkJOvXXrQ3AGwuldN1W/r+cfnwRe2ePGeFO4zlzg==",
       "type": "package",
       "path": "microsoft.extensions.configuration.environmentvariables/2.2.4",
       "files": [
@@ -1615,7 +1615,7 @@
       ]
     },
     "System.Diagnostics.DiagnosticSource/4.5.1": {
-      "sha512": "/tu8MfTToEdI+I0L10NkGXqGuLDIvmkWqjnaSit3o8i5SZz8A0kz9YLxfZltFKbxmsOpYqnyoysPvPlQMZVwxg==",
+      "sha512": "zCno/m44ymWhgLFh7tELDG9587q0l/EynPM0m4KgLaWQbz/TEKvNRX2YT5ip2qXW/uayifQ2ZqbnErsKJ4lYrQ==",
       "type": "package",
       "path": "system.diagnostics.diagnosticsource/4.5.1",
       "files": [
@@ -1916,24 +1916,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\320087363\\.nuget\\packages\\": {},
+    "C:\\Users\\320106573\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+      "projectUniqueName": "C:\\Users\\320106573\\Desktop\\CASE STUDY\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
       "projectName": "AssistPurchaseTests",
-      "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
-      "packagesPath": "C:\\Users\\320087363\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\obj\\",
+      "projectPath": "C:\\Users\\320106573\\Desktop\\CASE STUDY\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+      "packagesPath": "C:\\Users\\320106573\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\320106573\\Desktop\\CASE STUDY\\assist-purchase-s21b10\\AssistPurchaseTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\320087363\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\320106573\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1945,8 +1948,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
-              "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
+            "C:\\Users\\320106573\\Desktop\\CASE STUDY\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
+              "projectPath": "C:\\Users\\320106573\\Desktop\\CASE STUDY\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
             }
           }
         }
@@ -2007,7 +2010,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
