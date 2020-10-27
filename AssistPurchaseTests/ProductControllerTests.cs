@@ -26,7 +26,7 @@ namespace AssistPurchaseTests
             {
                 Layer = sentLayer,
                 LayerMembers = new[] { sentLayerMember },
-                ChoiceDictionary = new Dictionary<string, string[]>() { { sentLayer, new string[] { sentLayerMember } } }
+                ChoiceDictionary = new Dictionary<string, string[]>() { { sentLayer, new[] { sentLayerMember } } }
             };
             var receivedResponse = _productsController.GetNextQuestion(sentResponse);
             var actual = receivedResponse.Layer;
@@ -44,7 +44,7 @@ namespace AssistPurchaseTests
             {
                 Layer = sentLayer,
                 LayerMembers = new[] { sentLayerMember },
-                ChoiceDictionary = new Dictionary<string, string[]>() { { sentLayer, new string[] { sentLayerMember } } }
+                ChoiceDictionary = new Dictionary<string, string[]>() { { sentLayer, new[] { sentLayerMember } } }
             };
             var receivedResponse = _productsController.GetNextQuestion(responseSent);
             var actualLayer = receivedResponse.Layer;
