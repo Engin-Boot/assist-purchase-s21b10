@@ -1,0 +1,49 @@
+﻿<Window x:Class="AssistPurchaseFrontend.CustomerDetailsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssistPurchaseFrontend"
+        mc:Ignorable="d"
+        Title="CustomerDetailsForm" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#0474ac">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column ="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" x:Name="ImageGrid"/>
+            <TextBlock x:Name="ProductDescription" Text="ProductDescription" Grid.Row="1" Foreground="White"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0"  Text="Customer Name" Style="{StaticResource ResourceKey=TextBlockStyle}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Customer Contact No." Style="{StaticResource ResourceKey=TextBlockStyle}" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Customer Region" Style="{StaticResource ResourceKey=TextBlockStyle}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0"  Text="Customer Email Id"  Style="{StaticResource ResourceKey=TextBlockStyle}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Selected Product Id" Style="{StaticResource ResourceKey=TextBlockStyle}" />
+            <TextBox x:Name="CustName" Grid.Row="0" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+            <TextBox x:Name="CustNo" Grid.Row="1" Grid.Column="1" Style="{StaticResource ResourceKey=TextBoxStyle}" />
+            <TextBox x:Name="CustRegion" Grid.Row="2" Grid.Column="1" Style="{StaticResource ResourceKey=TextBoxStyle}" />
+            <TextBox x:Name="CustEmail" Grid.Row="3" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="ProductId" IsEnabled="False" Style="{StaticResource ResourceKey=TextBoxStyle}"/>
+            <Button Content="Back" Grid.Row="5" Grid.Column="0" Click="Back_Button_Click" Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Content="Buy Product" Grid.Row="5" Grid.Column="1" Click="Buy_Button_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+        </Grid>
+    </Grid>
+</Window>

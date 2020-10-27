@@ -1,0 +1,27 @@
+﻿<Window x:Class="AssistPurchaseFrontend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssistPurchaseFrontend"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#0474ac">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="./Icons/PhilipsIcon.png" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"></Image>
+        <TextBlock Grid.Row="0" Text="ASSIST PURCHASE&#xA; APPLICATION" TextAlignment="Center" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Customer Services" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Grid.Column="1" Content="Product Configuration" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="Configure_Button_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Grid.Column="2" Content="Sales Leads" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="Exit_Button_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+        </Grid>
+    </Grid>
+</Window>

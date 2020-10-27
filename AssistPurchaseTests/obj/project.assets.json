@@ -828,7 +828,7 @@
       ]
     },
     "Microsoft.AspNetCore.Hosting/2.2.7": {
-      "sha512": "O0ZBE53Fa9bVGXykDzvgMFW0Pe1QyPPFg1pazN8l3RUFSWBsDJ9/iD1LHXgADA8+ZD3R/1zkvraPa9SZdievxQ==",
+      "sha512": "2ZORFIfzcoSgm34z7ddMaVJFpIN7JJubPV+pRwAa7/NT33KEqLYEJWchDxQpwLvzKOnl//V3ElDcNJcD4blUDQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.hosting/2.2.7",
       "files": [
@@ -1022,7 +1022,7 @@
       ]
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/2.2.4": {
-      "sha512": "Os7uRhp9xwawY5w2tgXw/86YrmAJZl6aHiQVdS9boWybTWPkJOvXXrQ3AGwuldN1W/r+cfnwRe2ePGeFO4zlzg==",
+      "sha512": "TEhBhGP1CWuHs1+Rk09AlGK02VMTSMZtrKzZgW8/N08+21W1ArB1iZZt1kUnCfIwfuYHgHFGyni0ApcOJ2pN/Q==",
       "type": "package",
       "path": "microsoft.extensions.configuration.environmentvariables/2.2.4",
       "files": [
@@ -1615,7 +1615,7 @@
       ]
     },
     "System.Diagnostics.DiagnosticSource/4.5.1": {
-      "sha512": "zCno/m44ymWhgLFh7tELDG9587q0l/EynPM0m4KgLaWQbz/TEKvNRX2YT5ip2qXW/uayifQ2ZqbnErsKJ4lYrQ==",
+      "sha512": "/tu8MfTToEdI+I0L10NkGXqGuLDIvmkWqjnaSit3o8i5SZz8A0kz9YLxfZltFKbxmsOpYqnyoysPvPlQMZVwxg==",
       "type": "package",
       "path": "system.diagnostics.diagnosticsource/4.5.1",
       "files": [
@@ -1916,23 +1916,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell1\\.nuget\\packages\\": {},
+    "C:\\Users\\320087363\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+      "projectUniqueName": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
       "projectName": "AssistPurchaseTests",
-      "projectPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
-      "packagesPath": "C:\\Users\\Dell1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\obj\\",
+      "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+      "packagesPath": "C:\\Users\\320087363\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\320087363\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1945,8 +1945,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
-              "projectPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
+            "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
+              "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
             }
           }
         }

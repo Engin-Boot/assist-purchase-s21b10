@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj": {}
+    "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
+    "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj",
+        "projectUniqueName": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj",
         "projectName": "AssistPurchaseCaseStudy",
-        "projectPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj",
-        "packagesPath": "C:\\Users\\Dell1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\obj\\",
+        "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj",
+        "packagesPath": "C:\\Users\\320087363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\320087363\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,20 +62,20 @@
         }
       }
     },
-    "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj": {
+    "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+        "projectUniqueName": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
         "projectName": "AssistPurchaseTests",
-        "projectPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
-        "packagesPath": "C:\\Users\\Dell1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseTests\\obj\\",
+        "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\AssistPurchaseTests.csproj",
+        "packagesPath": "C:\\Users\\320087363\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\320087363\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
-                "projectPath": "C:\\Users\\Dell1\\source\\repos\\AssistPurchase\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
+              "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj": {
+                "projectPath": "C:\\Users\\320087363\\assist-purchase-s21b10\\AssistPurchaseCaseStudy\\AssistPurchaseCaseStudy.csproj"
               }
             }
           }

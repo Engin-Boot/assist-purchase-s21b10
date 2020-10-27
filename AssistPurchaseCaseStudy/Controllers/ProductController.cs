@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using AssistPurchaseCaseStudy.Repository;
 using AssistPurchaseCaseStudy.Models;
 using AssistPurchaseCaseStudy.Utility;
+using System.Linq;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,13 +27,25 @@ namespace AssistPurchaseCaseStudy.Controllers
         {
             var sendResponse = new RequestResponse();
             var requestvalidator = new RequestResponseValidation();
-            if(requestvalidator.IsRequestResponseCorrect(recievedResponse))
+            if (requestvalidator.IsRequestResponseCorrect(recievedResponse))
             {
                 var suggestionPathObj = new SuggestionPaths();
                 sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
-                sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.LayerMembers);
+                if (recievedResponse.Layer == "startLayer")
+                {
+                    sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer });
+                }
+                else if (recievedResponse.Layer == "lastLayer")
+                {
+                    return recievedResponse;
+                }
+                else
+                {
+                    sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
+                }
+                //recievedResponse.ChoiceDictionary.Add(recievedResponse.Layer, recievedResponse.LayerMembers);
                 sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
-                sendResponse.ChoiceDictionary.Add(recievedResponse.Layer, recievedResponse.LayerMembers);
+                //sendResponse.ChoiceDictionary.Add(recievedResponse.Layer, recievedResponse.LayerMembers);
             }
             else
             {
@@ -51,7 +64,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         }
 
         //GET: api/<ProductController>/questions/showproducts
-        [HttpGet("questions/showproducts")]
+        [HttpPost("questions/showproducts")]
         public IEnumerable<Products> Get([FromBody] RequestResponse recievedResponse)
         {
             var requestvalidator = new RequestResponseValidation();
@@ -61,7 +74,7 @@ namespace AssistPurchaseCaseStudy.Controllers
             }
             else
             {
-                return new List<Products>() { new Products("Invalid GetProductRequest")};
+                return new List<Products>() { new Products("Invalid GetProductRequest") };
             }
         }
     }

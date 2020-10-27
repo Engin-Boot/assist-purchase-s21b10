@@ -10,7 +10,7 @@ namespace AssistPurchaseCaseStudy.Repository
 
         private readonly string _question1 = "Features";
         private readonly List<string> _featuresMap = new List<string>() { "Touch_Screen", "Handle", "Alarm", "Battery" };
-        
+
         private readonly List<string> _tsMap = new List<string>() { "Only Spo2", "ESN", "Resp", "CO2", "Others" };
         private readonly List<string> _handleMap = new List<string>() { "ESN", "Resp", "CO2" };
         private readonly List<string> _alarmMap = new List<string>() { "Additional Display", "ESN", "Resp", "CO2" };
@@ -26,9 +26,9 @@ namespace AssistPurchaseCaseStudy.Repository
         private readonly List<string> _displayMap = new List<string>() { "End" };
 
         private readonly Dictionary<string, string> _layerHierarchy = new Dictionary<string, string>()
-            {{"Features", "Services"}, {"Services", "DisplaySize"}, {"DisplaySize", "lastLayer"}};
+            {{"startLayer","Features"},{"Features", "Services"}, {"Services", "DisplaySize"}, {"DisplaySize", "lastLayer"}};
 
-        public readonly List<string> ListOfLayers = new List<string>() { "Features", "Services", "DisplaySize", "lastLayer" };
+        public readonly List<string> ListOfLayers = new List<string>() { "startLayer", "Features", "Services", "DisplaySize", "lastLayer" };
 
         public readonly Dictionary<string, List<string>> ValidLayerMembers = new Dictionary<string, List<string>>();
 
@@ -75,9 +75,9 @@ namespace AssistPurchaseCaseStudy.Repository
             var lst = new List<string>();
             foreach (string response in layerResponse)
             {
-                if (ValidLayerMembers.ContainsKey(response))
+                if (_quesDictionary.ContainsKey(response))
                 {
-                    lst = ValidLayerMembers[response];
+                    lst = _quesDictionary[response];
                 }
 
                 returnObjList = returnObjList.Union(lst).ToList();
