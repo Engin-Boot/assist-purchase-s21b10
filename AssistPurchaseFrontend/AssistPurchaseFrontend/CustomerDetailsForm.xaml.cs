@@ -30,11 +30,11 @@ namespace AssistPurchaseFrontend
                                      "Features:- "+ string.Join(",", product.Features) + Environment.NewLine + 
                                      "Services:- "+ string.Join(",", product.Services) + Environment.NewLine + 
                                      "Display Size:- "+string.Join(",", product.DisplaySize);
-            Image Mole = new Image();
+            Image img = new Image();
             string imgPath = @".\Images\" + product.Name + ".PNG";
-            ImageSource MoleImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
-            Mole.Source = MoleImage;
-            ImageGrid.Children.Add(Mole);
+            ImageSource productImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
+            img.Source = productImage;
+            ImageGrid.Children.Add(img);
             ProductId.Text = product.Id;
         }
 

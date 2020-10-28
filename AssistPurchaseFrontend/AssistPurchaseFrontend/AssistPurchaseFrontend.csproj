@@ -97,7 +97,6 @@
     <Compile Include="SalesWindow.xaml.cs">
       <DependentUpon>SalesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\AddAProduct.cs" />
     <Compile Include="Utility\Add_Product.cs" />
     <Compile Include="Utility\GetAllProducts.cs" />
     <Compile Include="Utility\GetCustomerDetails.cs" />

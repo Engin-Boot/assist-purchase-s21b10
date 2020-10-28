@@ -18,7 +18,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="">
+        <Grid Grid.Row="1">
             <TextBlock Background="#0474ac" Text="Number of Consumers in Each Region" Style="{StaticResource ResourceKey=TextBlockStyle}"  Width="Auto" />
         </Grid>    
         <Grid Grid.Row="2">
@@ -54,7 +54,7 @@
             <TextBox x:Name="west" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
         </Grid>
         <Grid Grid.Row="7">
-            <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="Back_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
+            <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ResourceKey=ButtonStyle}"/>
         </Grid>
 
     </Grid>

@@ -46,10 +46,6 @@ namespace AssistPurchaseFrontend
                 dashboard.ProductId.Checked += ProductId_Checked;
                 Image Mole = new Image();
                 string imgPath = @".\Images\" + productList[i].Name + ".PNG";
-                //if (!File.Exists(imgPath))
-                //{
-                //    imgPath=@".\Images\Demo Product.PNG";
-                //}
                 ImageSource MoleImage = new BitmapImage(new Uri(imgPath, UriKind.Relative));
                 Mole.Source = MoleImage;
                 Mole.Width = 200;
@@ -89,6 +85,7 @@ namespace AssistPurchaseFrontend
         {
             AddProductForm newWindow = new AddProductForm();
             newWindow.Show();
+            this.Close();
         }
 
         private async void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -105,6 +102,7 @@ namespace AssistPurchaseFrontend
             Products productSelected = ViewParticularProduct.selectedProduct;
             ProductViewWindow viewWindow = new ProductViewWindow(productSelected);
             viewWindow.Show();
+            this.Close();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

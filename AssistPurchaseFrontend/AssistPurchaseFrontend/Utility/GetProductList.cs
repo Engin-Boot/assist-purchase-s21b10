@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -17,7 +16,7 @@ namespace AssistPurchaseFrontend.Utility
     class GetProductList
     {
 
-        private static List<Products> productList = new List<Products>();
+        private static List<Products> productListByChoices = new List<Products>();
         private static RequestResponse question = GetQuestions.question;
         public static Products productSelected = new Products();
         public async Task getProductsMatchingTheChoices()
@@ -34,7 +33,7 @@ namespace AssistPurchaseFrontend.Utility
             if (response.IsSuccessStatusCode)
             {
                 var jsonContent = response.Content.ReadAsStringAsync().Result;
-                productList = JsonConvert.DeserializeObject<List<Products>>(jsonContent);
+                productListByChoices = JsonConvert.DeserializeObject<List<Products>>(jsonContent);
             }
             else
             {
@@ -53,7 +52,7 @@ namespace AssistPurchaseFrontend.Utility
 
         public void AddChoices(QuestionBlock block)
         {
-            foreach (Products product in productList)
+            foreach (Products product in productListByChoices)
             {
                 ToggleButton b1 = new ToggleButton();
                 string pathToImage =@".\Images\"+ product.Name + ".PNG";
@@ -78,7 +77,7 @@ namespace AssistPurchaseFrontend.Utility
         }
         private void SearchSelectedProductByName(string productName)
         {
-            foreach(Products product in productList)
+            foreach(Products product in productListByChoices)
             {
                 if(product.Name == productName)
                 {

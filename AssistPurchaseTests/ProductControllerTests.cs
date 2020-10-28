@@ -38,13 +38,13 @@ namespace AssistPurchaseTests
         [InlineData("Services", "upto 10", "Invalid RequestResponse Sent")]
         [InlineData("DisplaySize", "Services", "Invalid RequestResponse Sent")]
         [InlineData("DisplaySize", "upto 10", "lastLayer")]
-        public void WhenInvalidResponseThenReturnMessageInLayer(string sentLayer, string sentLayerMember, string expectedReceivedLayer)
+        public void WhenInvalidResponseThenReturnMessageInLayer(string layerSent, string layerMemberSent, string expectedReceivedLayer)
         {
             var responseSent = new RequestResponse()
             {
-                Layer = sentLayer,
-                LayerMembers = new[] { sentLayerMember },
-                ChoiceDictionary = new Dictionary<string, string[]>() { { sentLayer, new[] { sentLayerMember } } }
+                Layer = layerSent,
+                LayerMembers = new[] { layerMemberSent},
+                ChoiceDictionary = new Dictionary<string, string[]>() { { layerSent, new[] { layerMemberSent } } }
             };
             var receivedResponse = _productsController.GetNextQuestion(responseSent);
             var actualLayer = receivedResponse.Layer;
