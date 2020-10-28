@@ -74,7 +74,7 @@ namespace AssistPurchaseFrontend.Utility
             string productName = buttonImageName.Split('.')[0];
             SearchSelectedProductByName(productName);
         }
-        private void SearchSelectedProductByName(string productName)
+        public void SearchSelectedProductByName(string productName)
         {
             foreach(Products product in productListByChoices)
             {

@@ -2,6 +2,7 @@ using AssistPurchaseFrontend.Models;
 using AssistPurchaseFrontend.Utility;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Security.Cryptography.Xml;
 using Xunit;
 
 namespace SystemTests
@@ -60,6 +61,24 @@ namespace SystemTests
             var products = GetProductList.productListByChoices;
             Assert.Empty(products);
         }
+        [Fact]
+        public void Test19()
+        {
+            GetProductList getProductList = new GetProductList();
+            getProductList.SearchSelectedProductByName("Goldway G40E");
+            var product = GetProductList.productSelected;
+            Assert.NotNull(product);
+        }
+        [Fact]
+        public void Test20()
+        {
+            GetProductList getProductList = new GetProductList();
+            getProductList.SearchSelectedProductByName("ABC");
+            string product = JsonConvert.SerializeObject(GetProductList.productSelected);
+            string nullProduct = JsonConvert.SerializeObject( new Products());
+            Assert.Equal(nullProduct,product);
+        }
+
         #endregion
 
         #region View Particular Product
@@ -131,15 +150,10 @@ namespace SystemTests
         [Fact]
         public async void Test8()
         {
-            GetAllProducts getAllProducts = new GetAllProducts();
-            await getAllProducts.GetAllProductsList();
-            var productsCount = GetAllProducts.productList.Count;
             Products product = new Products();
             Add_Product addProduct = new Add_Product();
             await addProduct.AddAProduct(product);
-            await getAllProducts.GetAllProductsList();
-            var productsCountAfterAdding = GetAllProducts.productList.Count;
-            Assert.NotEqual(productsCount + 1, productsCountAfterAdding);
+            Assert.False(Add_Product.isAdded);
         }
         #endregion
 
@@ -194,14 +208,86 @@ namespace SystemTests
         [Fact]
         public async void Test12()
         {
-            GetAllProducts getAllProducts = new GetAllProducts();
-            await getAllProducts.GetAllProductsList();
-            var productsCount = GetAllProducts.productList.Count;
             RemoveAProduct removeAProduct = new RemoveAProduct();
             await removeAProduct.RemoveAProductByID("P125");
-            await getAllProducts.GetAllProductsList();
-            var productsCountAfterRemoving = GetAllProducts.productList.Count;
-            Assert.NotEqual(productsCount - 1, productsCountAfterRemoving);
+            Assert.False(RemoveAProduct.isRemoved);
+        }
+        #endregion
+
+        #region Get Confirmation Alert
+        [Fact]
+        public async void Test13()
+        {
+            GetCustomerDetails alert = new GetCustomerDetails();
+            AlertDataModel data = new AlertDataModel()
+            {
+                CustomerName = "Niki",
+                CustomerContactNo = "9876543210",
+                CustomerRegion = "South",
+                CustomerEmailId = "niki@gmail.com",
+                ProductIdConfirmed = "P106"
+            };
+            await alert.ProductConfirmation(data);
+            string notification = GetCustomerDetails.notification;
+            string expected = "\"Order with ProductId P106 has been Confirmed\"";
+            Assert.Equal(expected, notification);
+        }
+
+        [Fact]
+        public async void Test14()
+        {
+            GetCustomerDetails alert = new GetCustomerDetails();
+            AlertDataModel data = new AlertDataModel()
+            {
+                CustomerName = "Niki",
+                CustomerContactNo = "98765430",
+                CustomerRegion = "South",
+                CustomerEmailId = "niki@gmail.com",
+                ProductIdConfirmed = "P106"
+            };
+            await alert.ProductConfirmation(data);
+            string notification = GetCustomerDetails.notification;
+            string expected = "";
+            Assert.Equal(expected, notification);
+        }
+        #endregion
+
+        #region Get Next Question
+        [Fact]
+        public async void Test15()
+        {
+            GetQuestions getQuestions = new GetQuestions();
+            await getQuestions.GetNextQuestions(new[] { "Touch_Screen","Alarm"});
+            string serializedQuestion = JsonConvert.SerializeObject(GetQuestions.question);
+            string serializedNullQuestion = JsonConvert.SerializeObject(new RequestResponse());
+            Assert.NotEqual(serializedQuestion,serializedNullQuestion);
+        }
+        [Fact]
+        public async void Test16()
+        {
+            GetQuestions getQuestions = new GetQuestions();
+            await getQuestions.GetNextQuestions(new[] {""});
+            string serializedQuestion = JsonConvert.SerializeObject(GetQuestions.question);
+            string serializedNullQuestion = JsonConvert.SerializeObject(new RequestResponse());
+            Assert.NotEqual(serializedNullQuestion,serializedQuestion);
+        }
+        #endregion
+
+        #region Sales Operations
+        [Fact]
+        public async void Test17()
+        {
+            SalesOperations salesOperations = new SalesOperations();
+            await salesOperations.InitializeConsumers();
+            List<AlertDataModel> consumers =  SalesOperations.Consumers;
+            Assert.NotEmpty(consumers);
+        }
+        [Fact]
+        public void Test18()
+        {
+            SalesOperations salesOperations = new SalesOperations();
+            Dictionary<string, int> dict = salesOperations.GetNumberOfConsumersInEachRegion();
+            Assert.NotEmpty(dict);
         }
         #endregion
     }

@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class SalesOperations
+    public class SalesOperations
     {
         public static List<AlertDataModel> Consumers = new List<AlertDataModel>();
 

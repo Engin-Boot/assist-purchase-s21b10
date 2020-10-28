@@ -10,7 +10,7 @@ using System.Windows.Controls.Primitives;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class GetQuestions
+    public class GetQuestions
     {
         public static RequestResponse question = new RequestResponse();
         private static RequestResponse old_question = new RequestResponse();
@@ -82,6 +82,7 @@ namespace AssistPurchaseFrontend.Utility
             }
             else
             {
+                question = new RequestResponse();
                 MessageBox.Show("Error Code" +
                 response.StatusCode + " : Message - " + response.ReasonPhrase);
             }

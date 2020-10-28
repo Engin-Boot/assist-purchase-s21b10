@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class GetCustomerDetails
+    public class GetCustomerDetails
     {
         public static string notification;
         public async Task ProductConfirmation(AlertDataModel dataModel)
@@ -29,6 +29,7 @@ namespace AssistPurchaseFrontend.Utility
             }
             else
             {
+                notification = "";
                 MessageBox.Show("Error Code" +
                 response.StatusCode + " : Message - " + response.ReasonPhrase);
             }

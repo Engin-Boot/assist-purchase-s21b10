@@ -8,6 +8,7 @@ namespace AssistPurchaseFrontend.Utility
 {
     public class RemoveAProduct
     {
+        public static bool isRemoved = false;
         public async Task RemoveAProductByID(string productId)
         {
             HttpClient client = new HttpClient();
@@ -18,10 +19,20 @@ namespace AssistPurchaseFrontend.Utility
 
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Product with ProductId" + productId + "has been successfully removed");
+                if (response.Content.ReadAsStringAsync().Result == "404")
+                {
+                    isRemoved = false;
+                    MessageBox.Show("No product exists");
+                }
+                else
+                {
+                    isRemoved = true;
+                    MessageBox.Show("Product with ProductId" + productId + "has been successfully removed");
+                }
             }
             else
             {
+                isRemoved = false;
                 MessageBox.Show("Error Code" +
                 response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
