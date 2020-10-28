@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssistPurchaseFrontend"
         mc:Ignorable="d"
-        Title="CustomersInRegion" Height="450" Width="800">
+        Title="CustomersInRegion" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid Background="#0474ac">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -17,10 +17,11 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
-            <TextBlock Background="#0474ac" Text="Number of Consumers in Each Region" Style="{StaticResource ResourceKey=TextBlockStyle}"  Width="Auto" />
-        </Grid>    
+        <Grid Grid.Row="0">
+            <TextBlock Background="#0474ac" Foreground="White" Text="Number of Consumers in Each Region" Style="{StaticResource ResourceKey=TextBlockStyle}"  Width="Auto" />
+        </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -53,8 +54,24 @@
             <TextBlock Grid.Column="0"  Text="West" Style="{StaticResource ResourceKey=TextBlockStyle}" />
             <TextBox x:Name="west" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
         </Grid>
-        <Grid Grid.Row="7">
-            <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ResourceKey=ButtonStyle}"/>
+        <Grid Grid.Row="6">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition></ColumnDefinition>
+
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"  Text="Unknown" Style="{StaticResource ResourceKey=TextBlockStyle}" />
+
+            <TextBox x:Name="unknown" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+
+        </Grid>
+
+        <Grid Grid.Row="8">
+            <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Back_Click"  Style="{StaticResource ResourceKey=ButtonStyle}"/>
         </Grid>
 
     </Grid>

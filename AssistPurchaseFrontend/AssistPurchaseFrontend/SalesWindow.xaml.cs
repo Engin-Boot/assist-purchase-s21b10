@@ -38,6 +38,10 @@ namespace AssistPurchaseFrontend
 
         private void ConsumersInEachRegion_Click(object sender, RoutedEventArgs e)
         {
+            CustomersInRegion window = new CustomersInRegion();
+            window.Show();
+            this.Close();
+
 
         }
     }

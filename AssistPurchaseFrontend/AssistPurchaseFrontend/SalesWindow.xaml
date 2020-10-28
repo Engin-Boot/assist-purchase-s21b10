@@ -8,12 +8,11 @@
         Title="SalesWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid Background="#0474ac">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="./Icons/PhilipsIcon.png" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"></Image>
-        <TextBlock Grid.Row="0" Text="ASSIST PURCHASE&#xA; APPLICATION" TextAlignment="Center" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <Grid Grid.Row="1">
+        <TextBlock Grid.Row="0" Text="Sales Leads" TextAlignment="Center" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Grid.Row="1" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
