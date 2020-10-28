@@ -21,12 +21,12 @@ namespace AssistPurchaseFrontend
         public ConfigurationWindow()
         {
             InitializeComponent();
-            allProducts();
+            AllProducts();
         }
-        public async void allProducts()
+        public async void AllProducts()
         {
             GetAllProducts products = new GetAllProducts();
-            await products.getAllProducts();
+            await products.GetAllProductsList();
             AddImages(GetAllProducts.productList);
         }
 
@@ -91,14 +91,14 @@ namespace AssistPurchaseFrontend
         private async void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             RemoveAProduct product = new RemoveAProduct();
-            await product.removeAProductByID(productIdSelected);
+            await product.RemoveAProductByID(productIdSelected);
             this.RefreshButton_Click(sender, e);
         }
 
         private async void ViewButton_Click(object sender, RoutedEventArgs e)
         {
             ViewParticularProduct product = new ViewParticularProduct();
-            await product.getAProductsByID(productIdSelected);
+            await product.GetAProductsByID(productIdSelected);
             Products productSelected = ViewParticularProduct.selectedProduct;
             ProductViewWindow viewWindow = new ProductViewWindow(productSelected);
             viewWindow.Show();

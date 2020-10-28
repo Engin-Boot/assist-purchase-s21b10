@@ -1,8 +1,6 @@
-using System;
+using AssistPurchaseCaseStudy.Models;
 using System.Collections.Generic;
 using System.Linq;
-using AssistPurchaseCaseStudy.Models;
-
 
 namespace AssistPurchaseCaseStudy.Repository
 {

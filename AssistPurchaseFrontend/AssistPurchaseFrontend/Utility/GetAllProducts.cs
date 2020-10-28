@@ -12,7 +12,7 @@ namespace AssistPurchaseFrontend.Utility
     class GetAllProducts
     {
         public static List<Products> productList = new List<Products>();
-        public async Task getAllProducts()
+        public async Task GetAllProductsList()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

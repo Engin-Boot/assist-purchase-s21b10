@@ -10,7 +10,7 @@ namespace AssistPurchaseCaseStudy.Utility
         {
             ProductRepository repository = new ProductRepository();
             bool productIdResponse = repository.CheckProductId(dataModel.ProductIdConfirmed);
-            bool detailsresponse = CheckContactNoAndName(dataModel.CustomerContactNo, dataModel.CustomerName);
+            bool detailsresponse = CheckContactNoAndName(dataModel.CustomerContactNo, dataModel.CustomerName, dataModel.CustomerEmailId);
             if (productIdResponse == false || detailsresponse == false)
             {
                 return false;
@@ -18,17 +18,17 @@ namespace AssistPurchaseCaseStudy.Utility
             return true;
 
         }
-        private bool CheckContactNoAndName(string contactno, string customername)
+        private bool CheckContactNoAndName(string contactno, string customername, string email)
         {
-            if (ContactNocheck(contactno) || String.IsNullOrEmpty(customername))
+            if (ContactNocheck(contactno,email) || String.IsNullOrEmpty(customername))
             {
                 return false;
             }
             return true;
         }
-        private bool ContactNocheck(string contactno)
+        private bool ContactNocheck(string contactno, string email)
         {
-            if (String.IsNullOrEmpty(contactno) || contactno.Length != 10)
+            if (String.IsNullOrEmpty(email) || contactno.Length != 10)
                 return true;
             else
                 return false;

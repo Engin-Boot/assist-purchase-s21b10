@@ -11,7 +11,7 @@ namespace AssistPurchaseFrontend.Utility
     class ViewParticularProduct
     {
         public static Products selectedProduct = new Products();
-        public async Task getAProductsByID(string productId)
+        public async Task GetAProductsByID(string productId)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

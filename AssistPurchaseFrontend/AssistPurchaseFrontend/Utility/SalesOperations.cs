@@ -11,14 +11,14 @@ namespace AssistPurchaseFrontend.Utility
 {
     class SalesOperations
     {
-        public static List <AlertDataModel> Consumers = new List<AlertDataModel>();
+        public static List<AlertDataModel> Consumers = new List<AlertDataModel>();
 
         public SalesOperations()
         {
-            initializeConsumers();
+            InitializeConsumers();
         }
 
-        public async Task initializeConsumers()
+        public async Task InitializeConsumers()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");
@@ -39,14 +39,16 @@ namespace AssistPurchaseFrontend.Utility
             }
         }
 
-        public Dictionary<string,int> getNumberOfConsumersInEachRegion()
+        public Dictionary<string, int> GetNumberOfConsumersInEachRegion()
         {
-            Dictionary<string, int> dict = new Dictionary<string, int>();
-            dict.Add("east", 0);
-            dict.Add("west", 0);
-            dict.Add("north", 0);
-            dict.Add("south", 0);
-            dict.Add("unknown", 0);
+            Dictionary<string, int> dict = new Dictionary<string, int>()
+            {
+                { "east",0},
+                { "west",0},
+                { "north",0},
+                { "south",0},
+                { "unknown",0}
+            };
             foreach (AlertDataModel i in Consumers)
             {
                 string region = i.CustomerRegion.ToLower().Trim();

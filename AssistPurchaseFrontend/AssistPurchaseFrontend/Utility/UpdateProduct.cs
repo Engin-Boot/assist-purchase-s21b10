@@ -11,7 +11,7 @@ namespace AssistPurchaseFrontend.Utility
 {
     class UpdateProduct
     {
-        public async Task updateAProduct(Products product)
+        public async Task UpdateAProduct(Products product)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

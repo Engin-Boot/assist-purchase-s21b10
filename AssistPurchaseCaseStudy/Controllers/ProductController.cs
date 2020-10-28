@@ -30,14 +30,7 @@ namespace AssistPurchaseCaseStudy.Controllers
             {
                 var suggestionPathObj = new SuggestionPaths();
                 sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
-                if (recievedResponse.Layer == "startLayer")
-                {
-                    sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer });
-                }
-                else
-                {
-                    sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
-                }
+                sendResponse.LayerMembers = recievedResponse.Layer=="startLayer"? suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer }): suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
                 sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
             }
             else

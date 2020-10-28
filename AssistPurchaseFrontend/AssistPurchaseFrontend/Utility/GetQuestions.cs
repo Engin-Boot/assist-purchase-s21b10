@@ -15,7 +15,7 @@ namespace AssistPurchaseFrontend.Utility
         public static RequestResponse question = new RequestResponse();
         private static RequestResponse old_question = new RequestResponse();
         public static string choicesMade = "";
-        public QuestionBlock getQuestion()
+        public QuestionBlock GetQuestion()
         {
             QuestionBlock block = new QuestionBlock();
             if (question.Layer == "lastLayer")
@@ -30,7 +30,7 @@ namespace AssistPurchaseFrontend.Utility
             }
             return block;
         }
-        public void setPreviousQuestion()
+        public void SetPreviousQuestion()
         {
             old_question.ChoiceDictionary.Remove(old_question.Layer);
             question = old_question;
@@ -61,7 +61,7 @@ namespace AssistPurchaseFrontend.Utility
             choicesMade += buttonText + ",";
         }
 
-        public async Task getNextQuestions(string[] choices)
+        public async Task GetNextQuestions(string[] choices)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");
@@ -90,8 +90,8 @@ namespace AssistPurchaseFrontend.Utility
         public async Task<QuestionBlock> Question()
         {
             string[] choices = choicesMade.Split(',');
-            await getNextQuestions(choices);
-            QuestionBlock block = getQuestion();
+            await GetNextQuestions(choices);
+            QuestionBlock block = GetQuestion();
             return block;
         }
     }

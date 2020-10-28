@@ -17,9 +17,9 @@ namespace AssistPurchaseFrontend.Utility
     {
 
         private static List<Products> productListByChoices = new List<Products>();
-        private static RequestResponse question = GetQuestions.question;
+        private readonly static RequestResponse question = GetQuestions.question;
         public static Products productSelected = new Products();
-        public async Task getProductsMatchingTheChoices()
+        public async Task GetProductsMatchingTheChoices()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");
@@ -42,7 +42,7 @@ namespace AssistPurchaseFrontend.Utility
             }
         }
 
-        public QuestionBlock getQuestion()
+        public QuestionBlock GetQuestion()
         {
             QuestionBlock block = new QuestionBlock();
             block.Choice_Question.Text = "Choose products from the given options:-";

@@ -42,7 +42,7 @@ namespace AssistPurchaseCaseStudy.Controllers
         [HttpPost("AddProduct")]
         public HttpStatusCode Post([FromBody] Models.Products product)
         {
-            if (String.IsNullOrEmpty(product.Id))
+            if (String.IsNullOrEmpty(product.Id) || String.IsNullOrEmpty(product.Name))
             {
                 return HttpStatusCode.BadRequest;
             }

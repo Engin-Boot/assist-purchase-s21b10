@@ -12,7 +12,7 @@ namespace AssistPurchaseFrontend.Utility
     class GetCustomerDetails
     {
         public static string notification;
-        public async Task productConfirmation(AlertDataModel dataModel)
+        public async Task ProductConfirmation(AlertDataModel dataModel)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

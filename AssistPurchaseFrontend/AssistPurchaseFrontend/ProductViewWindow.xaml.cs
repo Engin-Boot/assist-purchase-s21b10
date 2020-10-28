@@ -58,7 +58,7 @@ namespace AssistPurchaseFrontend
                 DisplaySize = DisplaySize.Text,
                 OtherInfo = null
             };
-            await product.updateAProduct(selectedProduct);
+            await product.UpdateAProduct(selectedProduct);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

@@ -8,7 +8,7 @@ namespace AssistPurchaseFrontend.Utility
 {
     class RemoveAProduct
     {
-        public async Task removeAProductByID(string productId)
+        public async Task RemoveAProductByID(string productId)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

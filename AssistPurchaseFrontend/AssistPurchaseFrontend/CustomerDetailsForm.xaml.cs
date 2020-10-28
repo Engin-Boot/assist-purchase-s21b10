@@ -38,7 +38,7 @@ namespace AssistPurchaseFrontend
             ProductId.Text = product.Id;
         }
 
-        public async Task getAllCustomerDetails()
+        public async Task GetAllCustomerDetails()
         {
             AlertDataModel data = new AlertDataModel()
             {
@@ -49,7 +49,7 @@ namespace AssistPurchaseFrontend
                 ProductIdConfirmed = ProductId.Text
             };
             GetCustomerDetails details = new GetCustomerDetails();
-            await details.productConfirmation(data);
+            await details.ProductConfirmation(data);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -61,7 +61,7 @@ namespace AssistPurchaseFrontend
 
         private async void Buy_Button_Click(object sender, RoutedEventArgs e)
         {
-            await getAllCustomerDetails();
+            await GetAllCustomerDetails();
             MessageBoxResult messageBox = MessageBox.Show(GetCustomerDetails.notification);
             if (messageBox == MessageBoxResult.OK)
             {
