@@ -1,4 +1,4 @@
-name: Build and Run
+name: BuildUI
  
 on: 
     push:
