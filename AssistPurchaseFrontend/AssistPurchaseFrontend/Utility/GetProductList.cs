@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class GetProductList
+    public class GetProductList
     {
 
         private static List<Products> productListByChoices = new List<Products>();

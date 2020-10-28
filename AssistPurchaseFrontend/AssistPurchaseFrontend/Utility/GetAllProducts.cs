@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class GetAllProducts
+    public class GetAllProducts
     {
         public static List<Products> productList = new List<Products>();
         public async Task GetAllProductsList()

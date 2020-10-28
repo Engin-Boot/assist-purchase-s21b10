@@ -37,3 +37,4 @@ C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseCaseStudy\obj\Debug\netc
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseCaseStudy\obj\Debug\netcoreapp3.1\AssistPurchaseCaseStudy.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseCaseStudy\obj\Debug\netcoreapp3.1\AssistPurchaseCaseStudy.pdb
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseCaseStudy\obj\Debug\netcoreapp3.1\AssistPurchaseCaseStudy.genruntimeconfig.cache
+C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseCaseStudy\obj\Debug\netcoreapp3.1\AssistPurchaseCaseStudy.csprojAssemblyReference.cache

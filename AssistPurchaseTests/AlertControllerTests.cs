@@ -47,6 +47,7 @@ namespace AssistPurchaseTests
 
             AlertDataModel alertDataModel = new AlertDataModel()
             {
+                CustomerContactNo = "87654320",
                 CustomerRegion = "Pune",
                 CustomerEmailId = "tom@gmail.com",
                 ProductIdConfirmed = "P101"

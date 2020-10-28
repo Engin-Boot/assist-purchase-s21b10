@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class Add_Product
+    public class Add_Product
     {
         public async Task AddAProduct(Products product)
         {
@@ -17,8 +17,8 @@ namespace AssistPurchaseFrontend.Utility
             client.BaseAddress = new Uri("http://localhost:5000/");
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-            var json = JsonConvert.SerializeObject(product);
-            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var jsonProductToBeAdded = JsonConvert.SerializeObject(product);
+            var data = new StringContent(jsonProductToBeAdded, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync("api/configureproducts/AddProduct", data);
 
             if (response.IsSuccessStatusCode)

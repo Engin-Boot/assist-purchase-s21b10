@@ -17,8 +17,8 @@ namespace AssistPurchaseFrontend.Utility
             client.BaseAddress = new Uri("http://localhost:5000/");
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-            var json = JsonConvert.SerializeObject(product);
-            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var jsonProductToBeUpdated = JsonConvert.SerializeObject(product);
+            var data = new StringContent(jsonProductToBeUpdated, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PutAsync("api/configureproducts/updateproduct/"+product.Id, data);
 
             if (response.IsSuccessStatusCode)
