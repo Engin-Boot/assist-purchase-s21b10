@@ -1,6 +1,6 @@
 ﻿namespace AssistPurchaseFrontend.Models
 {
-    class AlertDataModel
+    public class AlertDataModel
     {
         public string CustomerName { get; set; }
         public string CustomerContactNo { get; set; }

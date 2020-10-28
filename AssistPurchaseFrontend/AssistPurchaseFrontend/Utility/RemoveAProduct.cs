@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class RemoveAProduct
+    public class RemoveAProduct
     {
         public async Task RemoveAProductByID(string productId)
         {

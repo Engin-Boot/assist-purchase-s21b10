@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class ViewParticularProduct
+    public class ViewParticularProduct
     {
         public static Products selectedProduct = new Products();
         public async Task GetAProductsByID(string productId)
@@ -27,6 +27,7 @@ namespace AssistPurchaseFrontend.Utility
             }
             else
             {
+                selectedProduct = new Products();
                 MessageBox.Show("Error Code" +
                 response.StatusCode + " : Message - " + response.ReasonPhrase);
             }

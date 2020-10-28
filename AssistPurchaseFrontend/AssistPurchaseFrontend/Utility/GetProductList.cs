@@ -16,10 +16,9 @@ namespace AssistPurchaseFrontend.Utility
     public class GetProductList
     {
 
-        private static List<Products> productListByChoices = new List<Products>();
-        private readonly static RequestResponse question = GetQuestions.question;
+        public static List<Products> productListByChoices = new List<Products>();
         public static Products productSelected = new Products();
-        public async Task GetProductsMatchingTheChoices()
+        public async Task GetProductsMatchingTheChoices(RequestResponse question)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");

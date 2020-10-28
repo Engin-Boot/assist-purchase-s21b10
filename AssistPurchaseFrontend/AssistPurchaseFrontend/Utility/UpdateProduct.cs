@@ -9,8 +9,9 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class UpdateProduct
+    public class UpdateProduct
     {
+        public static bool productUpdated = false;
         public async Task UpdateAProduct(Products product)
         {
             HttpClient client = new HttpClient();
@@ -23,7 +24,16 @@ namespace AssistPurchaseFrontend.Utility
 
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Product with ProductId" + product.Id + "has been successfully updated");
+                if (response.Content.ReadAsStringAsync().Result == "404")
+                {
+                    productUpdated = false;
+                    MessageBox.Show("No product exists");
+                }
+                else
+                {
+                    productUpdated = true;
+                    MessageBox.Show("Product with ProductId" + product.Id + "has been successfully updated");
+                }
             }
             else
             {

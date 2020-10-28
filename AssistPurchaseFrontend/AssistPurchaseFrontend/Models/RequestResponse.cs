@@ -2,7 +2,7 @@
 
 namespace AssistPurchaseFrontend.Models
 {
-    class RequestResponse
+    public class RequestResponse
     {
         public Dictionary<string, string[]> ChoiceDictionary { get; set; }
         public string Layer { get; set; }

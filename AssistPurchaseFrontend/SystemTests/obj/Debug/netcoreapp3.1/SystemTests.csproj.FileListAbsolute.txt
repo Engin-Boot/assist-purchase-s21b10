@@ -1,3 +1,4 @@
+C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\AssistPurchaseFrontend.exe
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
@@ -86,9 +87,8 @@ C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\AssistPurchaseFrontend.exe
+C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\AssistPurchaseFrontend.dll
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\AssistPurchaseFrontend.pdb
-C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\bin\Debug\netcoreapp3.1\AssistPurchaseFrontend.exe.config
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\obj\Debug\netcoreapp3.1\SystemTests.csprojAssemblyReference.cache
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\obj\Debug\netcoreapp3.1\SystemTests.AssemblyInfoInputs.cache
 C:\Users\320087363\assist-purchase-s21b10\AssistPurchaseFrontend\SystemTests\obj\Debug\netcoreapp3.1\SystemTests.AssemblyInfo.cs

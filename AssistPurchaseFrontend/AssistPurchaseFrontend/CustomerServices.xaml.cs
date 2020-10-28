@@ -56,7 +56,7 @@ namespace AssistPurchaseFrontend
             if (GetQuestions.choicesMade == "Yes,")
             {
                 GetProductList productList = new GetProductList();
-                await productList.GetProductsMatchingTheChoices();
+                await productList.GetProductsMatchingTheChoices(GetQuestions.question);
                 QuestionBlock display = productList.GetQuestion();
                 panelForQuestion.Children.Add(display);
                 count += 1;
