@@ -7,5 +7,6 @@
         public string CustomerRegion { get; set; }
         public string CustomerEmailId { get; set; }
         public string ProductIdConfirmed { get; set; }
+        public bool AlertSent { get; set; } = false;
     }
 }

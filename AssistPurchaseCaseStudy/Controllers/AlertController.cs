@@ -9,7 +9,7 @@ namespace AssistPurchaseCaseStudy.Controllers
     [ApiController]
     public class AlertController : ControllerBase
     {
-       readonly  Repository.IAlertRepository _alertDataBaseRepository;
+        readonly Repository.IAlertRepository _alertDataBaseRepository;
 
         public AlertController(Repository.IAlertRepository repository)
         {
@@ -52,7 +52,19 @@ namespace AssistPurchaseCaseStudy.Controllers
                 return NotFound("No Customers");
             }
         }
-
+        [HttpGet("NewConsumers")]
+        public ActionResult NewConsumers()
+        {
+            var customers = this._alertDataBaseRepository.GetNewCustomers();
+            if (customers.Any())
+            {
+                return Ok(customers);
+            }
+            else
+            {
+                return NotFound("No Customers");
+            }
+        }
 
     }
 }

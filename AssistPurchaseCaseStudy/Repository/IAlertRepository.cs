@@ -9,5 +9,6 @@ namespace AssistPurchaseCaseStudy.Repository
         void Add(AlertDataModel dataModel);
         IEnumerable<AlertDataModel> GetCustomers();
         IEnumerable<AlertDataModel> GetRegionSpecificCustomers(string region);
+        IEnumerable<AlertDataModel> GetNewCustomers();
     }
 }
