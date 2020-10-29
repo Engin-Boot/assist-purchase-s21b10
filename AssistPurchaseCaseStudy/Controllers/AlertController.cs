@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using AssistPurchaseCaseStudy.Utility;
 using Microsoft.AspNetCore.Mvc;
 
@@ -63,6 +64,23 @@ namespace AssistPurchaseCaseStudy.Controllers
             else
             {
                 return NotFound("No Customers");
+            }
+        }
+
+        [HttpGet("UpdateConsumerAlert/{orderId}")]
+        public HttpStatusCode Put(int orderId)
+        {
+            if (!_alertDataBaseRepository.CheckConsumerExist(orderId))
+                return HttpStatusCode.BadRequest;
+            bool flag = this._alertDataBaseRepository.UpdateConsumerAlert(orderId);
+            if (flag == false)
+            {
+                return HttpStatusCode.NotFound;
+
+            }
+            else
+            {
+                return HttpStatusCode.OK;
             }
         }
 

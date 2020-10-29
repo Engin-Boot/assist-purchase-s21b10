@@ -11,7 +11,7 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="./Icons/PhilipsIcon.png" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"></Image>
+        <Image Source="./Icons/PhilipsIcon.PNG" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"></Image>
         <TextBlock Grid.Row="0" Text="ASSIST PURCHASE&#xA; APPLICATION" TextAlignment="Center" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

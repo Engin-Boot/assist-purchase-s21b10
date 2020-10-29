@@ -10,5 +10,7 @@ namespace AssistPurchaseCaseStudy.Repository
         IEnumerable<AlertDataModel> GetCustomers();
         IEnumerable<AlertDataModel> GetRegionSpecificCustomers(string region);
         IEnumerable<AlertDataModel> GetNewCustomers();
+        bool UpdateConsumerAlert(int orderId);
+        bool CheckConsumerExist(int orderId);
     }
 }

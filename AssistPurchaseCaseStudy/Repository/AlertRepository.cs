@@ -17,7 +17,8 @@ namespace AssistPurchaseCaseStudy.Repository
                 CustomerRegion = "north",
                 CustomerEmailId = "tom@gmail.com",
                 ProductIdConfirmed = "P101",
-                AlertSent = false
+                AlertSent = false,
+                OrderId = 1
 
             });
             _alertsdb.Add(new AlertDataModel
@@ -27,7 +28,8 @@ namespace AssistPurchaseCaseStudy.Repository
                 CustomerRegion = "east",
                 CustomerEmailId = "harry@gmail.com",
                 ProductIdConfirmed = "P109",
-                AlertSent = false
+                AlertSent = false,
+                OrderId = 2
 
             });
         }
@@ -67,6 +69,35 @@ namespace AssistPurchaseCaseStudy.Repository
                 }
             }
             return dataModels;
+        }
+
+        public bool UpdateConsumerAlert(int orderId)
+        {
+            bool flag = false;
+            for (int i = 0; i < _alertsdb.Count; i++)
+            {
+                if (_alertsdb[i].OrderId == orderId)
+                {
+                    _alertsdb[i].AlertSent = true;
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        public bool CheckConsumerExist(int orderId)
+        {
+            bool flag = false;
+            for (int i = 0; i < _alertsdb.Count; i++)
+            {
+                if (_alertsdb[i].OrderId == orderId)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }

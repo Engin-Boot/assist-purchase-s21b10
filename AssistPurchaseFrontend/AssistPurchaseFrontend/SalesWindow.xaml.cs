@@ -33,7 +33,9 @@ namespace AssistPurchaseFrontend
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            NewConsumerAlerts window = new NewConsumerAlerts();
+            window.Show();
+            this.Close();
         }
 
         private void ConsumersInEachRegion_Click(object sender, RoutedEventArgs e)

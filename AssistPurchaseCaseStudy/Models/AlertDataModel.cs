@@ -1,4 +1,6 @@
-﻿namespace AssistPurchaseCaseStudy.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AssistPurchaseCaseStudy.Models
 {
     public class AlertDataModel
     {
@@ -8,5 +10,7 @@
         public string CustomerEmailId { get; set; }
         public string ProductIdConfirmed { get; set; }
         public bool AlertSent { get; set; } = false;
+        [Key]
+        public int OrderId { get; set; }
     }
 }
