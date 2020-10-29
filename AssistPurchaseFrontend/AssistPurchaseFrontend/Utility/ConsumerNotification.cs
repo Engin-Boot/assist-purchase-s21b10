@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -10,9 +11,10 @@ using Newtonsoft.Json;
 
 namespace AssistPurchaseFrontend.Utility
 {
+    [ExcludeFromCodeCoverage]
     public class ConsumerNotification
     {
-        public static List<AlertDataModel> NonNotified = new List<AlertDataModel>();
+        public List<AlertDataModel> NonNotified = new List<AlertDataModel>();
 
         public async Task GetConsumerNotificationsToBeSent()
         {

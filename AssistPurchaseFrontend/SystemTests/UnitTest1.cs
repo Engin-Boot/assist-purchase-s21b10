@@ -290,16 +290,5 @@ namespace SystemTests
             Assert.NotEmpty(dict);
         }
         #endregion
-
-        #region Consumer Notification
-        [Fact]
-        public async void Test21()
-        {
-            ConsumerNotification notification = new ConsumerNotification();
-            await notification.GetConsumerNotificationsToBeSent();
-            List<AlertDataModel> nonNotifiedAlerts = ConsumerNotification.NonNotified;
-            Assert.NotEmpty(nonNotifiedAlerts);
-        }
-        #endregion
     }
 }
