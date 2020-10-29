@@ -29,7 +29,7 @@ namespace AssistPurchaseTests.AutomatedTests
         [Fact]
         public async Task TestGetRegionSpecificConsumers()
         {
-            var response = await _test.Client.GetAsync(url + "/Consumers/Pune");
+            var response = await _test.Client.GetAsync(url + "/Consumers/north");
             response.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }

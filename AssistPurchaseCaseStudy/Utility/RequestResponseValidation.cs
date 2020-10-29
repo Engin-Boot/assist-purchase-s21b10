@@ -22,6 +22,15 @@ namespace AssistPurchaseCaseStudy.Utility
             return false;
         }
 
+        public bool IsChoicesMade(string[] choices)
+        {
+            if((string.Join("",choices) == ""))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool IsGetProductRequestCorrect(RequestResponse requestResponse)
         {
             if(requestResponse.ChoiceDictionary.Count!=0)

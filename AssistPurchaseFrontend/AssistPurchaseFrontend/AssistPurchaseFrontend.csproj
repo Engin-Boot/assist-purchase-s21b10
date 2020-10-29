@@ -7,7 +7,53 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\PhilipsIcon.PNG" />
+    <None Remove="Images\Demo Product.PNG" />
+    <None Remove="Images\Efficia CM Series.PNG" />
+    <None Remove="Images\Goldway G40E.PNG" />
+    <None Remove="Images\IntelliVue AD75.PNG" />
+    <None Remove="Images\IntelliVue AD85.PNG" />
+    <None Remove="Images\IntelliVue MMS X2.PNG" />
+    <None Remove="Images\IntelliVue MP2.PNG" />
+    <None Remove="Images\IntelliVue MP5.PNG" />
+    <None Remove="Images\IntelliVue MP5T.PNG" />
+    <None Remove="Images\IntelliVue MP90.PNG" />
+    <None Remove="Images\IntelliVue MX100.PNG" />
+    <None Remove="Images\IntelliVue MX400.PNG" />
+    <None Remove="Images\IntelliVue MX500.PNG" />
+    <None Remove="Images\IntelliVue MX550.PNG" />
+    <None Remove="Images\IntelliVue MX700.PNG" />
+    <None Remove="Images\IntelliVue MX750.PNG" />
+    <None Remove="Images\IntelliVue MX800.PNG" />
+    <None Remove="Images\IntelliVue X3.PNG" />
+    <None Remove="Images\IntelliVueMX450.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\PhilipsIcon.PNG" />
+    <Resource Include="Images\Demo Product.PNG" />
+    <Resource Include="Images\Efficia CM Series.PNG" />
+    <Resource Include="Images\Goldway G40E.PNG" />
+    <Resource Include="Images\IntelliVue AD75.PNG" />
+    <Resource Include="Images\IntelliVue AD85.PNG" />
+    <Resource Include="Images\IntelliVue MMS X2.PNG" />
+    <Resource Include="Images\IntelliVue MP2.PNG" />
+    <Resource Include="Images\IntelliVue MP5.PNG" />
+    <Resource Include="Images\IntelliVue MP5T.PNG" />
+    <Resource Include="Images\IntelliVue MP90.PNG" />
+    <Resource Include="Images\IntelliVue MX100.PNG" />
+    <Resource Include="Images\IntelliVue MX400.PNG" />
+    <Resource Include="Images\IntelliVue MX500.PNG" />
+    <Resource Include="Images\IntelliVue MX550.PNG" />
+    <Resource Include="Images\IntelliVue MX700.PNG" />
+    <Resource Include="Images\IntelliVue MX750.PNG" />
+    <Resource Include="Images\IntelliVue MX800.PNG" />
+    <Resource Include="Images\IntelliVue X3.PNG" />
+    <Resource Include="Images\IntelliVueMX450.PNG" />
   </ItemGroup>
 
 </Project>

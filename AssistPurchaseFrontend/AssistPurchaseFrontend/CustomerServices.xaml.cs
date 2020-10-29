@@ -30,7 +30,7 @@ namespace AssistPurchaseFrontend
             
         }
 
-        private async void NextButton_Click(object sender, RoutedEventArgs e)
+        private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             if (count == 4)
             {
@@ -44,8 +44,16 @@ namespace AssistPurchaseFrontend
             }
             else
             {
-                GetQuestions getQuestions = new GetQuestions();
-                QuestionBlock block = await getQuestions.Question();
+                getNextQuestion();
+            }
+        }
+
+        public async void getNextQuestion()
+        {
+            GetQuestions getQuestions = new GetQuestions();
+            QuestionBlock block = await getQuestions.Question();
+            if (block != null)
+            {
                 panelForQuestion.Children.Add(block);
                 count += 1;
             }
@@ -74,6 +82,7 @@ namespace AssistPurchaseFrontend
         {
             if (count == 0)
             {
+                GetQuestions.question = new Models.RequestResponse();
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();

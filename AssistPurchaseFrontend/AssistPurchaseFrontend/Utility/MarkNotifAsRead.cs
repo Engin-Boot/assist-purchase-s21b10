@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -8,7 +9,8 @@ using System.Windows;
 
 namespace AssistPurchaseFrontend.Utility
 {
-    class MarkNotifAsRead
+    [ExcludeFromCodeCoverage]
+    public class MarkNotifAsRead
     {
         public bool notifUpdated = false;
         public async Task SendMarkNotifRead(int orderId)

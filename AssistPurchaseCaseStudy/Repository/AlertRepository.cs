@@ -74,11 +74,11 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool UpdateConsumerAlert(int orderId)
         {
             bool flag = false;
-            for (int i = 0; i < _alertsdb.Count; i++)
+            foreach(AlertDataModel alertData in _alertsdb)
             {
-                if (_alertsdb[i].OrderId == orderId)
+                if (alertData.OrderId == orderId)
                 {
-                    _alertsdb[i].AlertSent = true;
+                    alertData.AlertSent = true;
                     flag = true;
                     break;
                 }
@@ -89,9 +89,9 @@ namespace AssistPurchaseCaseStudy.Repository
         public bool CheckConsumerExist(int orderId)
         {
             bool flag = false;
-            for (int i = 0; i < _alertsdb.Count; i++)
+            foreach (AlertDataModel alertData in _alertsdb)
             {
-                if (_alertsdb[i].OrderId == orderId)
+                if (alertData.OrderId == orderId)
                 {
                     flag = true;
                     break;

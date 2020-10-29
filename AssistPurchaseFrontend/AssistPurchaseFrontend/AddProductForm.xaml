@@ -32,10 +32,10 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="ProductId" Text="P113" Grid.Row="0" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
-                <TextBox x:Name="ProductName" Text="Demo" Grid.Row="1" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
-                <TextBox x:Name="Features" Text="Touch_Screen , Alarm" Grid.Row="2" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="ProductName" Text="Demo Product" Grid.Row="1" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="Features" Text="Touch_Screen,Alarm" Grid.Row="2" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
                 <TextBox x:Name="Services" Text="ESN" Grid.Row="3" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
-                <TextBox x:Name="DisplaySize" Text="Upto 10" Grid.Row="4" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
+                <TextBox x:Name="DisplaySize" Text="upto 10" Grid.Row="4" Grid.Column="1"  Style="{StaticResource ResourceKey=TextBoxStyle}" />
                 <TextBlock Text="PRODUCT ID"  Grid.Row="0"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
                 <TextBlock Text="PRODUCT NAME" Grid.Row="1"  Style="{StaticResource ResourceKey=TextBlockStyle}" />
                 <TextBlock Text="FEATURES" Grid.Row="2"  Style="{StaticResource ResourceKey=TextBlockStyle}" />

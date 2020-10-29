@@ -36,13 +36,13 @@ namespace AssistPurchaseFrontend.Utility
             question = old_question;
         }
 
-        public void AddChoices(string[] layerMembers,QuestionBlock block)
+        public void AddChoices(string[] layerMembers, QuestionBlock block)
         {
             for (int i = 0; i < layerMembers.Length; i++)
             {
                 ToggleButton b1 = new ToggleButton();
                 b1.Content = layerMembers[i];
-                b1.Style =(Style) Application.Current.Resources["ToggleButtonStyle"];
+                b1.Style = (Style)Application.Current.Resources["ToggleButtonStyle"];
                 b1.Checked += B1_Checked;
                 b1.Unchecked += B1_Unchecked;
                 block.ChoiceOptions.Children.Add(b1);
@@ -52,7 +52,7 @@ namespace AssistPurchaseFrontend.Utility
         private void B1_Unchecked(object sender, RoutedEventArgs e)
         {
             string buttonText = ((ToggleButton)sender).Content.ToString();
-            choicesMade = choicesMade.Replace(buttonText +",","");
+            choicesMade = choicesMade.Replace(buttonText + ",", "");
         }
 
         private void B1_Checked(object sender, RoutedEventArgs e)
@@ -92,8 +92,17 @@ namespace AssistPurchaseFrontend.Utility
         {
             string[] choices = choicesMade.Split(',');
             await GetNextQuestions(choices);
-            QuestionBlock block = GetQuestion();
-            return block;
+            if (question.Layer == "Invalid RequestResponse Sent")
+            {
+                MessageBox.Show("Please choose atleast one option");
+                SetPreviousQuestion();
+                return null;
+            }
+            else
+            {
+                QuestionBlock block = GetQuestion();
+                return block;
+            }
         }
     }
 }

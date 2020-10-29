@@ -54,6 +54,7 @@ namespace AssistPurchaseFrontend
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            GetQuestions.question = new RequestResponse();
             CustomerServices window = new CustomerServices();
             window.Show();
             this.Close();

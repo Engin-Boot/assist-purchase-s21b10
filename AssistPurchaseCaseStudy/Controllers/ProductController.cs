@@ -29,16 +29,34 @@ namespace AssistPurchaseCaseStudy.Controllers
             if (requestvalidator.IsRequestResponseCorrect(recievedResponse))
             {
                 var suggestionPathObj = new SuggestionPaths();
-                sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
-                sendResponse.LayerMembers = recievedResponse.Layer=="startLayer"? suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer }): suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
-                sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
+                if(recievedResponse.Layer == "startLayer")
+                {
+                    sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
+                    sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(new[] { sendResponse.Layer });
+                    sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
+                    return sendResponse;
+                }
+                else
+                {
+                    if (requestvalidator.IsChoicesMade(recievedResponse.ChoiceDictionary[recievedResponse.Layer]))
+                    {
+                        sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
+                        sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
+                        sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
+                        return sendResponse;
+                    }
+                    else
+                    {
+                        sendResponse.Layer = "Invalid RequestResponse Sent";
+                        return sendResponse;
+                    }
+                }
             }
             else
             {
                 sendResponse.Layer = "Invalid RequestResponse Sent";
+                return sendResponse;
             }
-
-            return sendResponse;
         }
 
         //GET: api/<ProductController>/questions
