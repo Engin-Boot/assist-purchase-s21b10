@@ -22,6 +22,25 @@ namespace AssistPurchaseCaseStudy.Utility
             return false;
         }
 
+        public RequestResponse getResponse(RequestResponse recievedResponse)
+        {
+            var sendResponse = new RequestResponse();
+            var requestvalidator = new RequestResponseValidation();
+            var suggestionPathObj = new SuggestionPaths();
+            if (requestvalidator.IsChoicesMade(recievedResponse.ChoiceDictionary[recievedResponse.Layer]))
+            {
+                sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
+                sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
+                sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
+                return sendResponse;
+            }
+            else
+            {
+                sendResponse.Layer = "Invalid RequestResponse Sent";
+                return sendResponse;
+            }
+        }
+
         public bool IsChoicesMade(string[] choices)
         {
             if((string.Join("",choices) == ""))

@@ -38,18 +38,7 @@ namespace AssistPurchaseCaseStudy.Controllers
                 }
                 else
                 {
-                    if (requestvalidator.IsChoicesMade(recievedResponse.ChoiceDictionary[recievedResponse.Layer]))
-                    {
-                        sendResponse.Layer = suggestionPathObj.NextLayer(recievedResponse.Layer);
-                        sendResponse.LayerMembers = suggestionPathObj.NextLayerMembers(recievedResponse.ChoiceDictionary[recievedResponse.Layer]);
-                        sendResponse.ChoiceDictionary = recievedResponse.ChoiceDictionary;
-                        return sendResponse;
-                    }
-                    else
-                    {
-                        sendResponse.Layer = "Invalid RequestResponse Sent";
-                        return sendResponse;
-                    }
+                    return requestvalidator.getResponse(recievedResponse);
                 }
             }
             else
