@@ -10,7 +10,7 @@ namespace AssistPurchaseFrontend.Utility
 {
     class MarkNotifAsRead
     {
-        public static bool productUpdated = false;
+        public bool notifUpdated = false;
         public async Task SendMarkNotifRead(int orderId)
         {
             HttpClient client = new HttpClient();
@@ -24,12 +24,12 @@ namespace AssistPurchaseFrontend.Utility
             {
                 if (response.Content.ReadAsStringAsync().Result == "200")
                 {
-                    productUpdated = true;
+                    notifUpdated = true;
                     MessageBox.Show("Marked As Read");
                 }
                 else
                 {
-                    productUpdated = false;
+                    notifUpdated = false;
                     MessageBox.Show("No notif exists Kindly refresh");
                 }
             }

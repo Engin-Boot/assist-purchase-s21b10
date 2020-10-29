@@ -28,7 +28,11 @@ namespace AssistPurchaseFrontend
         {
             ConsumerNotification Notifs = new ConsumerNotification();
             await Notifs.GetConsumerNotificationsToBeSent();
-            AddNotifications(ConsumerNotification.NonNotified);
+            if(ConsumerNotification.NonNotified.Count > 0) 
+            {
+                AddNotifications(ConsumerNotification.NonNotified);
+            }
+            
         }
         public void AddNotifications(List<AlertDataModel> notifs)
         {
@@ -57,6 +61,13 @@ namespace AssistPurchaseFrontend
             SalesWindow window = new SalesWindow();
             window.Show();
             this.Close();
+        }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeComponent();
+            ConsumerNotification.NonNotified = new List<AlertDataModel>();
+            AllAlerts();
         }
     }
 }

@@ -36,7 +36,11 @@ namespace AssistPurchaseFrontend
         {
             MarkNotifAsRead marking = new MarkNotifAsRead();
             await marking.SendMarkNotifRead(_consumer.OrderId);
-
+            if (marking.notifUpdated == true)
+            {
+                ((Panel)this.Parent).Children.Remove(this);
+                
+            }
         }
     }
 }
